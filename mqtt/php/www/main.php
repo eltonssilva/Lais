@@ -2679,23 +2679,25 @@ $con = mysqli_connect($DB_SERVER, $DB_USER, $DB_PASS, $DB_NAME);
 $query = "SELECT * FROM `servidor`";
 $data = mysqli_query($con, $query);
 mysqli_close($con);
+$rec = mysqli_fetch_array($data); 
+$date = new DateTime($rec['data_alerta']);
 ?>
+
 <div class="form">   
 <table border="1" cellpadding="5">
 
+<tr>
+<td>  </td>
+<td>  
+<a href="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=<?php echo "Casa" . "-" . $rec['pin'] ."-". $rec['chavedispositivo'] . "-" . $rec['ip']; ?>" target="_blank"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=<?php echo "Casa" . "-" . $rec['pin'] ."-". $rec['chavedispositivo'] . "-" . $rec['ip']; ?>"></a>
+</td>
+</tr>
 
-<?php
-$i=0;
-while($rec = mysqli_fetch_array($data)) 
-{ 
-$i++;
-$date = new DateTime($rec['data_alerta']);
-
-?>
 <tr>
 <td> Nome </td>
 <td> <?php echo $rec['nome']; ?> </td>
 </tr>
+
 <tr>
 <td> Usuário </td>
 <td> <?php echo $rec['usuario']; ?> </td>
@@ -2733,6 +2735,12 @@ $date = new DateTime($rec['data_alerta']);
 </tr>
 
 <tr>
+<td> IP </td>
+<td> <?php echo $rec['ip']; ?> </td>
+</tr>
+
+
+<tr>
 <td> Chave Local </td>
 <td> <?php echo substr($rec['chavelocal'], 0 , 5); ?> </td>
 </tr>
@@ -2743,9 +2751,10 @@ $date = new DateTime($rec['data_alerta']);
 </tr>
 
 
-
-<?php } ?>
 </table>
+
+
+
 </div>
 
 
