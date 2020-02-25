@@ -1,0 +1,63 @@
+<tr>
+<th><img src='/png/64/bulb.png' alt='Smiley face' height='64' width='64'></th> 
+<th>Lampada Cozinha</th>
+<th>SN: ADJFJJJJEJEHE-01   PIN: 123-43-456</th>
+ <th> 
+ <div class='onoffswitch'>
+ <input type='checkbox' name='onoffswitch' class='onoffswitch-checkbox' id='myonoffswitch' checked>
+<label class='onoffswitch-label' for='myonoffswitch'>
+<span class='onoffswitch-inner'></span>
+<span class='onoffswitch-switch'></span>
+</label>
+</div>
+</th>
+<th> <a onClick='return confirm('Tem Certeza que deseja deletar!')' href='deleteinterruptor.php?id=<?php echo $rec['id']; ?>'>Deletar</a> </th>
+</tr>
+
+   
+<tr>
+<th><img src='/png/64/drop.png' alt='Smiley face' height='64' width='64'></th> 
+<th>Humidade Cozinha</th>
+<th>SN: ADJFJJJJEJEHE-01   PIN: 123-43-456</th>
+<th>23%</th>
+</th>
+<th> <a onClick='return confirm('Tem Certeza que deseja deletar!')' href='deleteinterruptor.php?id=<?php echo $rec['id']; ?>'>Deletar</a> </th>
+</tr>
+
+<tr>
+<th><img src='/png/64/temperature.png' alt='Smiley face' height='64' width='64'></th> 
+<th>Temperatura Cozinha</th>
+<th>SN: ADJFJJJJEJEHE-01   PIN: 123-43-456</th>
+<th>23c</th>
+</th>
+<th> <a onClick='return confirm('Tem Certeza que deseja deletar!')' href='deleteinterruptor.php?id=<?php echo $rec['id']; ?>'>Deletar</a> </th>
+</tr>
+
+<tr>
+<th><img src='/png/64/lux.png' alt='Smiley face' height='64' width='64'></th> 
+<th>Nivel de Luz Cozinha</th>
+<th>SN: ADJFJJJJEJEHE-01   PIN: 123-43-456</th>
+<th>56 lux</th>
+</th>
+<th> <a onClick='return confirm('Tem Certeza que deseja deletar!')' href='deleteinterruptor.php?id=<?php echo $rec['id']; ?>'>Deletar</a> </th>
+</tr>
+
+<tr>
+<th><img src='/png/64/rgb.png' alt='Smiley face' height='64' width='64'></th> 
+<th>Lampada Cozinha</th>
+<th>SN: ADJFJJJJEJEHE-01   PIN: 123-43-456</th>
+ <th>
+ <div class='onoffswitch'>
+ <input type='checkbox' name='onoffswitch2' class='onoffswitch-checkbox' id='myonoffswitch2' checked>
+<label class='onoffswitch-label' for='myonoffswitch2'>
+<span class='onoffswitch-inner'></span>
+<span class='onoffswitch-switch'></span>
+</label>
+</div>
+ Cor RGB
+ <svg height='25' width='80'>
+  <circle cx='29' cy='15' r='8' stroke='black' stroke-width='1' fill='red' />
+</svg> 
+</th>
+<th> <a onClick='return confirm('Tem Certeza que deseja deletar!')' href='deleteinterruptor.php?id=<?php echo $rec['id']; ?>'>Deletar</a> </th>
+</tr>

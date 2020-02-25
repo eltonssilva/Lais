@@ -1,0 +1,26 @@
+0.0.4:
+- renamed all files to lower case
+0.0.10:
+- initial setup of request
+- "no more being babies" - Donald Trump
+0.1.0:
+- enabled different content type output
+0.2.0:
+- fixed package dependencies
+- wrote a reliable way to export csv files
+0.2.1:
+- updated documentation
+- added better error handling for responses
+- removed option to select method; POST only
+0.3.0:
+  - removed redirect option
+  - removed console log statements
+0.3.2:
+  - removed let statement to make ES4 friendly
+0.3.3:
+  - improved documentation
+  - addressed some error-handling issues with missing filepath; still work to be done here
+0.3.4:
+  - why is the readme file borked
+0.3.8:
+  - Readme file is unborked. Reason is unknown.

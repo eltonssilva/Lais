@@ -1,0 +1,10 @@
+{
+	"name": "server-com-push",
+	"version": "1.0.0",
+	"main": "server.js",
+	"dependencies": {
+		"body-parser": "^1.18.2",
+		"express": "^4.16.2",
+		"socket.io": "^1.7.4"
+	}
+}

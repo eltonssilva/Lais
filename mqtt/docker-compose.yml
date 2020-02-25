@@ -1,0 +1,144 @@
+version: '2'
+
+networks:
+  frontend:
+    driver: ${NETWORKS_DRIVER}
+  backend:
+    driver: ${NETWORKS_DRIVER}
+    
+services:
+  mqttautodomo:
+    container_name: mqttautodomo
+    image: eclipse-mosquitto
+    restart: always
+    volumes:
+      - ./mosquitto/config/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - ./mosquitto/config/pwfile:/mosquitto/config/pwfile
+      - ./mosquitto/data:/mosquitto/data
+    #  - ./mosquitto/log/mosquitto.log:/mosquitto/log/mosquitto.log
+    ports:
+      - 1883:1883
+      - 9001:9001
+    #command: ifconfig
+
+  noderedautodomo:
+    container_name: noderedautodomo
+    image: raymondmm/node-red
+    restart: always
+    ports:
+      - 1880:1880
+      - 8082:8082
+      - 8123:8123 # Web
+    volumes:
+      - ./nodered/.node-red/data:/data
+
+
+  db:
+    container_name: db
+    image: biarms/mysql #eltonssilva/mysql:armv7_1.0 #hypriot/rpi-mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    volumes:
+      - ./mariadb:/docker-entrypoint-initdb.d
+
+  # adminer: #OK
+  #   container_name: adminer
+  #   image: adminer
+  #   restart: always
+  #   ports:
+  #     - 8080:8080
+  #   depends_on:
+  #     - db
+
+  phpMyAdmin:
+    container_name: phpMyAdmin
+    image: sk278/phpmyadmin-armhf:4.8.3
+    restart: always
+    ports:
+      - 8081:80
+    depends_on:
+      - db
+
+  nodejs:
+    container_name: nodejs
+    image: eltonssilva/nodejs:armv7_1.0
+    restart: always
+    depends_on:
+      - db
+
+  nodediverso: #OK
+    container_name: nodediverso
+    image: eltonssilva/nodediverso:armv7_1.0
+    restart: always
+    volumes:
+      - ./configs:/home/node/app/configs
+    depends_on:
+      - db
+    ports:
+      - 8085:8085
+      - 4555:4555
+
+
+
+  nodekdb: #OK
+    container_name: nodekdb
+    image: eltonssilva/nodekdb:armv7_1.0
+    restart: always
+    network_mode: host
+    volumes:
+      - ./nodediverso/kdb:/home/node/app/kdb
+      - ./configs:/home/node/app/configs
+    ports:
+      - 1979:1979
+      - 1980:1980
+
+  supervisorio: #OK
+    container_name: supervisorio
+    image: eltonssilva/supervisorio:armv7_1.0
+    restart: always
+
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./php/www:/var/www/html/
+      - ./homekit/accessories:/home/pi/HAP-NodeJS/accessories/
+      - ./configs:/home/node/app/configs
+      - ./php/localcerts:/etc/ssl/localcerts/
+      - ./php/sites-available:/etc/apache2/sites-available/
+      - ./php/sites-enabled:/etc/apache2/sites-enabled/
+      - ./php/mods-enabled/ssl.conf:/etc/apache2/mods-enabled/ssl.conf
+      - ./php/mods-enabled/ssl.load:/etc/apache2/mods-enabled/ssl.load
+      - ./php/mods-enabled/socache_shmcb.load:/etc/apache2/mods-enabled/socache_shmcb.load
+  
+  #  SSLSessionCache: 'shmcb' session cache not supported (known names: ). Maybe you need to load the appropriate socache module (mod_socache_shmcb?).
+  
+  homekit:
+    container_name: homekit
+    image: eltonssilva/homekit:armv7_1.0
+    restart: always
+    network_mode: host
+
+    ports:
+      - 51826:51826
+      - 5353:5353
+    volumes:
+      - ./homekit/accessories:/home/HAP-NodeJS/accessories
+
+  zigbee2mqtt:
+    container_name: zigbee2mqtt
+    image: koenkk/zigbee2mqtt
+    volumes:
+      - ./zigbee2mqtt/data:/app/data
+    privileged: true
+    devices:
+      # CC251
+      - /dev:/dev
+    restart: always
+    network_mode: host
+    environment:
+      - TZ=Europe/Amsterdam

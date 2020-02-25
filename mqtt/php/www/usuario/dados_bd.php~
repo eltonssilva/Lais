@@ -1,0 +1,53 @@
+<?php
+
+// database server:
+$DB_SERVER = "db";
+
+
+// username:
+$DB_USER = "userautohome";
+
+// password:
+$DB_PASS = "UserautohomeMysql1.0bi";
+
+// database name:
+$DB_NAME = "autohome";
+
+
+// CONFIGURAÇÃO MQTT
+
+// IP MQTT
+
+$ip = 'localhost';
+
+$conip  = mysqli_connect($DB_SERVER, $DB_USER, $DB_PASS, $DB_NAME);
+
+$query2 = "SELECT ip FROM `servidor` where 1=1";
+mysqli_set_charset($conip, 'utf8');
+$data2 = mysqli_query($conip, $query2);
+mysqli_close($conip);
+while($rec2 = mysqli_fetch_array($data2)) 
+{ 
+$ip = $rec2['ip'];
+echo $ip;
+}
+
+
+// IP MQTT
+
+//$ip = $_SERVER['SERVER_ADDR']; // Pega o ip idependente do servidor
+
+// Porta MQTT:
+$port_mqtt = '1993';
+
+
+
+$salgadinho = 'salgeui47e3d4a319b5muitoe0d9077cca1e41fcd9a4legal';
+
+//dados mqtt
+$port= 1883;
+$host ='localhost';
+$fabricante = 'AutoHome';
+$endereco = '/home/pi/HAP-NodeJS/accessories/';
+
+?>

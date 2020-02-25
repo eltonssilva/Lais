@@ -1,0 +1,55 @@
+<?php
+require_once("../usuario/dados_bd.php");
+include_once("../segurancaconfig.php"); // Inclui o arquivo com o sistema de segurança
+include_once("../bibliobaixaconfig.php"); // Inclui o arquivo com o sistema de segurança
+
+protegePagina(); // Chama a função que protege a página
+
+
+if(isset($_POST['btn'])) 
+{
+//$bearertoken = Get_BearerToken_FromKapellt();
+//$result = SyncDevicesGoogleHome($BearerToken);
+echo $pin = $_POST['servidor'];
+echo $token = $_POST['hash'];
+GetDeviceSpecificInfor($pin, $token);
+
+}
+
+?>
+
+<html>
+<head>
+<link href="/css/main.css" rel="stylesheet" type="text/css"/> 
+<link href="/css/w3.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#btn').click(function () {
+   //         window.opener.location.reload(true);
+    //        window.close();
+        });
+    });
+</script>
+
+<div class="form">
+<h5>Tem certeza que deseja Sicronizar seus dispositivo com o GoogleHome</h5>
+
+<form  class="w3-container w3-card-4" method="POST">
+<label class="w3-label w3-text-blue"><b>Pin Servidor</b></label>
+ <input type="text" class="w3-input w3-border" value="" name="servidor" maxlength=16/>    
+ <br>
+ <label class="w3-label w3-text-blue"><b>Token</b></label>
+ <input type="text" class="w3-input w3-border" value="" name="hash" maxlength=40/>  
+
+<br>
+<input type="submit" class= "w3-btn w3-blue" id='btn' name='btn' value='Baixa Configuração Geral' /><br><p>
+<?php echo $msg; ?>
+</form>
+</div>
+
+</body>
+</html>
+

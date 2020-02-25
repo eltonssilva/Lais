@@ -1,0 +1,161 @@
+.barra{
+
+min-height: 56px;
+ 
+    color: #fff;
+  background-color: #01579b;
+  width: 100%;
+  height: 65px;
+  line-height: 56px;
+  margin-bottom: 10px;
+  border-style: outset;
+  
+  
+ 
+}
+.texto{
+margin-left:50%;	
+margin-top:10px;
+font-family: verdana;
+font-size: 200%;	
+padding:-15px;
+}
+.central{
+text-align:center;
+padding: 0px;
+}
+
+.imagem{
+cursor: pointer;
+	
+}
+  *{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+  }
+  body{
+   font-family: sans-serif;
+  }
+  a:link,
+  a:visited{
+   text-decoration: none;
+  }
+  .modal{
+   background-color: rgba(0,0,0, .8);
+   width:100%;
+   height: 100vh;
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 10;
+   opacity: 0;
+   visibility: hidden;
+   transition: all .5s;
+  }
+  .modal__content{
+   width: 30%;
+   height: 80%;
+   background-color: #fff;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   padding: 2em;
+   border-radius: 1em;
+   opacity: 0;
+   visibility: hidden;
+   transition: all .5s;
+  }
+  
+  
+  #modal:target{
+   opacity: 1;
+   visibility: visible;
+  }
+  #modal:target .modal__content{
+   opacity: 1;
+   visibility: visible;
+  }
+  .modal__close{
+   color: #363636;
+   font-size: 2em;
+   position: absolute;
+   top: .5em;
+   right: 1em;
+  }
+  .modal__heading{
+   color: dodgerblue;
+   margin-bottom: 1em;
+  }
+  .modal__paragraph{
+   line-height: 1.5em;
+  }
+.modal-open{
+ display: inline-block;
+ color: dodgerblue;
+ margin: 2em;
+}
+.button {
+  background-color: #e0e0e0;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button_on {
+  background-color: #e0e0e0;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  margin-right: 0;
+  cursor: pointer;
+}
+
+.button_off {
+  background-color: #e0e0e0;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: auto;
+  cursor: pointer;
+  width: 30%;
+  height: 13%;
+  
+}
+
+
+.display_lcd {
+    width: 90%;
+	height: 20%;
+    background: #669999;
+    margin: auto;
+    margin-top: 10%; /* 100%-80%/2 */
+}
+.teclas_lcd_Linha1 {
+    width: 90%;
+	height: 12%;
+    background: #665599;
+    margin: auto;
+    margin-top: 1%; /* 100%-80%/2 */
+}
+
+.h1_display_lcd {
+    text-align: center;
+}
+

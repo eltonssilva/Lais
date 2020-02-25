@@ -1,0 +1,6 @@
+9/25/2019, 7:00:42 PM - info: Logging to directory: '/app/data/log/2019-09-25.19-00-42'
+9/25/2019, 7:00:42 PM - info: Starting zigbee2mqtt version 1.5.1 (commit #unknown)
+9/25/2019, 7:00:42 PM - info: Starting zigbee-shepherd
+9/25/2019, 7:00:42 PM - info: Error while starting zigbee-shepherd, attempting to fix... (takes 60 seconds) (Error: Error: No such file or directory, cannot open /dev/ttyACM0)
+9/25/2019, 7:01:42 PM - info: Starting zigbee-shepherd
+9/25/2019, 7:01:42 PM - error: Error while starting zigbee-shepherd! (Error: Error: No such file or directory, cannot open /dev/ttyACM0)

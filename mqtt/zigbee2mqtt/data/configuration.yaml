@@ -1,0 +1,13 @@
+homeassistant: false
+permit_join: true
+mqtt:
+  base_topic: /housezigbee
+  server: 'mqtt://localhost'
+  user: autohome
+  password: comida05
+serial:
+  port: /dev/ttyACM0
+devices:
+  '0x00158d0002009f83':
+    friendly_name: '0x00158d0002009f83'
+    retain: false

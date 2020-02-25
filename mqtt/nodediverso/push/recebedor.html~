@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+	<meta charset="UTF-8">
+	<title>Recebedor de notificações</title>
+</head>
+<body>
+	<script src="http://192.168.10.101:4555/socket.io/socket.io.js"></script>
+	<script>
+	  var socket = io('http://192.168.10.101:4555', {transports: ['websocket', 'polling', 'flashsocket']});
+	  socket.on('notificacao', function (data) {
+	    document.getElementById('codigo433mhz').innerHTML = data;
+	    
+	  });
+	</script>
+
+	<div id="messagebox">
+	</div>
+</body>
+</html>

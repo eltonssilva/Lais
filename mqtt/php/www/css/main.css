@@ -1,0 +1,206 @@
+#tabs {
+  overflow: hidden;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#tabs li {
+  float: left;
+  margin: 0 .5em 0 0;
+}
+
+#tabs a {
+  position: relative;
+  background: #ddd;
+  background-image: linear-gradient(to bottom, #fff, #ddd);  
+  padding: .7em 3.5em;
+  float: left;
+  text-decoration: none;
+  color: #444;
+  text-shadow: 0 1px 0 rgba(255,255,255,.8);
+  border-radius: 5px 0 0 0;
+  box-shadow: 0 2px 2px rgba(0,0,0,.4);
+}
+
+#tabs a:hover,
+#tabs a:hover::after,
+#tabs a:focus,
+#tabs a:focus::after {
+  background: #fff;
+}
+
+#tabs a:focus {
+  outline: 0;
+}
+
+#tabs a::after {
+  content:'';
+  position:absolute;
+  z-index: 1;
+  top: 0;
+  right: -.5em;  
+  bottom: 0;
+  width: 1em;
+  background: #ddd;
+  background-image: linear-gradient(to bottom, #fff, #ddd);  
+  box-shadow: 2px 2px 2px rgba(0,0,0,.4);
+  transform: skew(10deg);
+  border-radius: 0 5px 0 0;  
+}
+
+#tabs #current a,
+#tabs #current a::after {
+  background: #fff;
+  z-index: 3;
+}
+
+#content {
+  background: #fff;
+  padding: 2em;
+  height: 220px;
+  position: relative;
+  z-index: 2; 
+  border-radius: 0 5px 5px 5px;
+  box-shadow: 0 -2px 3px -2px rgba(0, 0, 0, .5);
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 0px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+       .onoffswitch {
+        position: relative; width: 113px;
+        -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    }
+    .onoffswitch-checkbox {
+        display: none;
+    }
+    .onoffswitch-label {
+        display: block; overflow: hidden; cursor: pointer;
+        border: 0px solid #999999; border-radius: 29px;
+    }
+    .onoffswitch-inner {
+        display: block; width: 200%; margin-left: -100%;
+        transition: margin 0.3s ease-in 0s;
+    }
+    .onoffswitch-inner:before, .onoffswitch-inner:after {
+        display: block; float: left; width: 50%; height: 28px; padding: 0; line-height: 28px;
+        font-size: 14px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+        box-sizing: border-box;
+    }
+    .onoffswitch-inner:before {
+        content: "Ligado";
+        padding-left: 11px;
+        background-color: #EEEEEE; color: #0E1DED;
+    }
+    .onoffswitch-inner:after {
+        content: "Desligado";
+        padding-right: 11px;
+        background-color: #EEEEEE; color: #999999;
+        text-align: right;
+    }
+	
+    .onoffswitch-switch {
+        display: block; width: 18px; margin: 5px;
+        background: #A1A1A1;
+        position: absolute; top: 0; bottom: 0;
+        right: 81px;
+        border: 0px solid #999999; border-radius: 29px;
+        transition: all 0.3s ease-in 0s; 
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+        margin-left: 0;
+    }
+	.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner2 {
+        margin-left: 0;
+    }
+    .onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+        right: 0px; 
+        background-color: #27A1CA; 
+    }
+    
+    .ui-flipswitch .ui-btn.ui-flipswitch-on {
+  text-indent: -2.6em;
+}
+.ui-flipswitch .ui-flipswitch-off {
+  text-indent: 1em;
+}
+
+.ui-flipswitch {
+  width: 5.875em;
+}
+.ui-flipswitch.ui-flipswitch-active {
+  padding-left: 4em;
+  width: 1.875em;
+}
+@media (min-width: 28em) {
+  // Repeated from rule .ui-flipswitch above
+  .ui-field-contain > label + .ui-flipswitch {
+    width: 1.875em;
+  }
+}
+
+div.minimalistBlack {
+
+width: 100vw;
+height: 100vh;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+
+  
+}
+.divTable.minimalistBlack .divTableCell2, .divTable.minimalistBlack .divTableHead {
+  border: 4px solid #000000;
+  padding: 10px 18px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.divTable.minimalistBlack .divTableBody
+
+.divTableCell1 {
+  font-size: 25px;
+  font-weight: bold;
+ padding: 0px 10px;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%); /* Adicionar os prefixos dos navegadores */
+}
+
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+
+.divTableCell2 {
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+vertical-align: middle;
+}
+.minimalistBlack .tableFootStyle {
+  font-size: 14px;
+}
+/* DivTable.com */
+.divTable{ display: table; }
+.divTableRow { display: table-row; }
+.divTableHeading { display: table-header-group;}
+.divTableCell2, .divTableHead { display: table-cell;}
+.divTableHeading { display: table-header-group;}
+.divTableFoot { display: table-footer-group;}
+.divTableBody { display: table-row-group;}
+
