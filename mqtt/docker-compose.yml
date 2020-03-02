@@ -114,6 +114,9 @@ services:
       - ./php/mods-enabled/ssl.conf:/etc/apache2/mods-enabled/ssl.conf
       - ./php/mods-enabled/ssl.load:/etc/apache2/mods-enabled/ssl.load
       - ./php/mods-enabled/socache_shmcb.load:/etc/apache2/mods-enabled/socache_shmcb.load
+      - ./mosquitto/config/mosquitto.conf:/etc/mosquitto/config/mosquitto.conf
+      - ./mosquitto/config/pwfile:/etc/mosquitto/config/pwfile
+      - ./mosquitto/data:/etc/mosquitto/data
   
   #  SSLSessionCache: 'shmcb' session cache not supported (known names: ). Maybe you need to load the appropriate socache module (mod_socache_shmcb?).
   

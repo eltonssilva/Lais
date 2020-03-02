@@ -81,10 +81,10 @@ if(isset($_POST['btn']))
 				$padrao_senha_mqtt = nova_senha_mqtt("autodomumhomekit", "$homekit_#123456$");
 			//	echo	$nova_senha_mqtt;
 			//	echo  $padrao_senha_mqtt;
-			$shell_senha1 = "sudo sed -i '2d' /etc/mosquitto/pwfile";
-			$shell_senha2 = "sudo echo '" . $nova_senha_mqtt . "' >> /etc/mosquitto/pwfile";
-			$shell_senha3 = "sudo sed -i 's/{$se_bb_old}/{$se_bb}/g' /home/pi/wiringPi/wiringPi/myscript.js";
-			$shell_senha4 = "sudo sed -i 's/{$usu_bb_old}/{$usu_bb}/g' /home/pi/wiringPi/wiringPi/myscript.js";
+			$shell_senha1 = "sudo sed -i '2d' /etc/mosquitto/config/pwfile";
+			$shell_senha2 = "sudo echo '" . $nova_senha_mqtt . "' >> /etc/mosquitto/config/pwfile";
+			//$shell_senha3 = "sudo sed -i 's/{$se_bb_old}/{$se_bb}/g' /home/pi/wiringPi/wiringPi/myscript.js";
+			//$shell_senha4 = "sudo sed -i 's/{$usu_bb_old}/{$usu_bb}/g' /home/pi/wiringPi/wiringPi/myscript.js";
 		//	echo $shell_senha3;
 			$output = shell_exec($shell_senha1);
 			$output = shell_exec($shell_senha2);
