@@ -81,15 +81,15 @@ if(isset($_POST['btn']))
 				$padrao_senha_mqtt = nova_senha_mqtt("autodomumhomekit", "$homekit_#123456$");
 			//	echo	$nova_senha_mqtt;
 			//	echo  $padrao_senha_mqtt;
-			$shell_senha1 = "sudo sed -i '2d' /etc/mosquitto/config/pwfile";
-			$shell_senha2 = "sudo echo '" . $nova_senha_mqtt . "' >> /etc/mosquitto/config/pwfile";
+			$shell_senha1 = "sed -i '3d' /etc/mosquitto/config/pwfile";
+			$shell_senha2 = "echo '" . $nova_senha_mqtt . "' >> /etc/mosquitto/config/pwfile";
 			//$shell_senha3 = "sudo sed -i 's/{$se_bb_old}/{$se_bb}/g' /home/pi/wiringPi/wiringPi/myscript.js";
 			//$shell_senha4 = "sudo sed -i 's/{$usu_bb_old}/{$usu_bb}/g' /home/pi/wiringPi/wiringPi/myscript.js";
 		//	echo $shell_senha3;
 			$output = shell_exec($shell_senha1);
 			$output = shell_exec($shell_senha2);
-			$output = shell_exec($shell_senha3);
-			$output = shell_exec($shell_senha4);
+	//		$output = shell_exec($shell_senha3);
+	//		$output = shell_exec($shell_senha4);
 			}
 			
 			
@@ -190,7 +190,7 @@ mysqli_close($con2);
 
 <a href="javascript: void(0);" onclick="window.open('system_restart.php', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=150');"><img src="/png/64/system_restart.png">Redefinir Sistema</a>
 <a href="javascript: void(0);" onclick="window.open('/config/configdispositivo.php');"><img src="/png/64/configdevice.png">Configurar Dispositivos</a>
-<a href="javascript: void(0);" onclick="window.open('/config/reboot.php');"><img src="/png/64/reboot.png">Reiniciar Sistema</a>
+<!-- <a href="javascript: void(0);" onclick="window.open('/config/reboot.php');"><img src="/png/64/reboot.png">Reiniciar Sistema</a> -->
 <a href="javascript: void(0);" onclick="window.open('/config/googlehomesicroniza.php');"><img src="/png/64/googlehome.png">Sincroniza Google Home</a>
 <a href="javascript: void(0);" onclick="window.open('/config/baixaconfiguracao.php', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=600');"><img src="/png/64/data-configuration.png">Adicionar Dispositivo</a>
 </body>

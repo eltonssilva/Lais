@@ -147,8 +147,9 @@ if(isset($_POST['btnSalvar']))
 	$dispositivo_fisico = '1'; //é dispositivo fisico? Sim=1, Não=0
 	$proprietario = '1'; // Dispositivo é Propriedade da Autohome? Sim=1, Não=0
 	$setname0 = $descricao; //setname0 é o nome que aparece no celular 
-	$setSubTopic0= '/house/rgb/' . $username_topico;  //Topico para Subscrever
+	$setSubTopic0= '/house/confirma/' . $username_topico;  //Topico para Subscrever
 	$setPubTopic0= '/house/rgb/' . $username_topico;  //Topico para Publicar
+	$setPubTopic0_confirma = '/house/confirma/' . $username_topico;  //Topico para Publicar
 	$publishValue='p1'; // Ligado no caso de Chave RGB
 	$publishValue2='p0'; // Desligado no caso de Chave RGB
 	$additionalValue='';  // Nada no Caso de Chave

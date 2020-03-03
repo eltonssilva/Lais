@@ -36,8 +36,8 @@ function SaveDates($result)
 		   $senha =  $Jsonresult[0]['senha'];
 		   $senhamqtt_gh =  $Jsonresult[0]['senhamqtt'];
 
-		
-	
+			if ($numeroserial != "")
+			{
 				$cnx = mysqli_connect($DB_SERVER, $DB_USER, $DB_PASS, $DB_NAME);
 				$query = "UPDATE `servidor` SET 
 				`pin` = '{$numeroserial}', 
@@ -65,6 +65,19 @@ function SaveDates($result)
 					}
 
 					mysqli_close($cnx);
+					echo "Configuração Atualizada\n";
+					echo "REINICIE O SISTEMA MANUALMENTE";
+
+			}else{
+				echo "Não foi possivel baixar os dados.\n";
+				echo "Verifique a validade do Token.\n";
+				echo "Ou entre em contato com a AutoDomo\n";
+	
+
+			}
+			
+	
+
 
 }
 
@@ -94,7 +107,7 @@ $data = array('pin' => $pin, 'token' => $token);
     if ($status == 200)
     {
     	SaveDates($result);
-    	echo "Configuração Atualizada";
+    //	echo "Configuração Atualizada";
     }
     else 
     {

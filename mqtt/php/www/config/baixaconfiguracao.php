@@ -35,7 +35,10 @@ GetDeviceSpecificInfor($pin, $token);
 </script>
 
 <div class="form">
-<h5>Tem certeza que deseja Sicronizar seus dispositivo com o GoogleHome</h5>
+<h1>Sincronizar Servidor</h1>
+<h5>1 - Coloque os dados abaixo depois</h5>
+<h5>2 - Clique em Baixa Configuração Geral</h5>
+<h5>3 - Clique em Fecha</h5>
 
 <form  class="w3-container w3-card-4" method="POST">
 <label class="w3-label w3-text-blue"><b>Pin Servidor</b></label>
