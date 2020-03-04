@@ -6,7 +6,7 @@ $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : "0";
 
 
 $query = "DELETE FROM `autohome`.`zigbee2mqtt` WHERE `zigbee2mqtt`.`serialzigbee` = '{$serialzigbee}'";
-echo $query;
+//echo $query;
 if(mysqli_query($con, $query)) {
 } else {
 echo "Impossivel Deletar!";
