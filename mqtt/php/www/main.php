@@ -2689,7 +2689,7 @@ $date = new DateTime($rec['data_alerta']);
 <tr>
 <td>  </td>
 <td>  
-<a href="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=<?php echo  $rec['nome'] . "-" . $rec['pin'] ."-". $rec['chavedispositivo'] . "-" . $rec['ip']; ?>" target="_blank"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=<?php echo "Casa" . "-" . $rec['pin'] ."-". $rec['chavedispositivo'] . "-" . $rec['ip']; ?>"></a>
+<a href="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=<?php echo  $rec['nome'] . "-" . $rec['pin'] ."-". $rec['chavedispositivo'] . "-" . $rec['ip']; ?>" target="_blank"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=<?php echo $rec['nome'] . "-" . $rec['pin'] ."-". $rec['chavedispositivo'] . "-" . $rec['ip']; ?>"></a>
 </td>
 </tr>
 
