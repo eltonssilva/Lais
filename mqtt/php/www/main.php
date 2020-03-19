@@ -77,24 +77,24 @@ var semi_topico = data.substring(barra2+1,barra3);
 	   { 
 	   	if (valor == 1)
 	   		{
-	   			$("." + id ).attr('checked', true);
+	   			$("#myonoffswitch" + id ).attr('checked', true);
 	   			$("#bulb" + id).attr("src", "/png/64/bulb_on.png");
 	   		}
 	   	if (valor == 0) 
 	   		{
-	   			$("." + id ).attr('checked', false);
+	   			$("#myonoffswitch" + id ).attr('checked', false);
 	   			$("#bulb" + id).attr("src", "/png/64/bulb.png");
 	   		} 
 				 if (valor == 'X') 
 	   		{
-					if($("." + id).attr('checked')) 
+					if($("#myonoffswitch" + id).attr('checked')) 
 					{
-						$("." + id ).attr('checked', false);
+						$("#myonoffswitch" + id ).attr('checked', false);
 	   			 	$("#bulb" + id ).attr("src", "/png/64/bulb.png");
 					}
 					else
 					{
-						$("." + id ).attr('checked', true);
+						$("#myonoffswitch" + id ).attr('checked', true);
 	   				$("#bulb" + id ).attr("src", "/png/64/bulb_on.png");
 					}
 
@@ -277,10 +277,10 @@ var semi_topico = data.substring(barra2+1,barra3);
 	   { 
 	   	if (valor == 1)
 	   		{
-	   			$("." + id ).attr('checked', true);
+	   			$("myonoffswitch." + id ).attr('checked', true);
 	   			$("#bulb" + id).attr("src", "/png/64/power button.png");
 	   		}else {
-	   			$("." + id ).attr('checked', false);
+	   			$("myonoffswitch." + id ).attr('checked', false);
 	   			$("#bulb" + id).attr("src", "/png/64/power button.png");
 	   		}  
 	   }
@@ -2689,7 +2689,7 @@ $date = new DateTime($rec['data_alerta']);
 <tr>
 <td>  </td>
 <td>  
-<a href="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=<?php echo "Casa" . "-" . $rec['pin'] ."-". $rec['chavedispositivo'] . "-" . $rec['ip']; ?>" target="_blank"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=<?php echo "Casa" . "-" . $rec['pin'] ."-". $rec['chavedispositivo'] . "-" . $rec['ip']; ?>"></a>
+<a href="https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=<?php echo  $rec['nome'] . "-" . $rec['pin'] ."-". $rec['chavedispositivo'] . "-" . $rec['ip']; ?>" target="_blank"><img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=<?php echo "Casa" . "-" . $rec['pin'] ."-". $rec['chavedispositivo'] . "-" . $rec['ip']; ?>"></a>
 </td>
 </tr>
 
