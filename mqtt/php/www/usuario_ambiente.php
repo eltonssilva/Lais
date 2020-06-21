@@ -3,6 +3,7 @@ require_once("usuario/dados_bd.php");
 $con = mysqli_connect($DB_SERVER, $DB_USER, $DB_PASS, $DB_NAME);
 $msg = "";
 $id = isset($_GET['id']) ? $_GET['id'] : "0";
+$imeimovel = isset($_GET['imeimovel']) ? $_GET['imeimovel'] : "0";
 
 mysqli_set_charset($con, 'utf8');
 $query = "SELECT usuario_widget.id, id_usuario, widget.Descricao, widget.pin_iphone, widget.username_iphone, usuario.imei FROM `usuario_widget`, widget, usuario WHERE widget.id = usuario_widget.id_widget AND id_usuario = $id AND usuario.id = $id";
@@ -14,12 +15,26 @@ $ambiente_data2 = mysqli_query($con, $query);
 $dispositivos = mysqli_query($con, $query2);
 $servidor = mysqli_query($con, $query3);
 
+$valendo = false;
+
+$row_cnt = $ambiente_data2->num_rows;
+//echo $row_cnt;
+
 while($rec2 = mysqli_fetch_assoc($ambiente_data2)) { 
 	$Jsonresul2 .= ('"' . str_replace(':', '', $rec2['username_iphone']) .'":"' . $rec2['id']  . '",');
-  $imei = $rec2['imei'];
+	$imei = $rec2['imei'];
+	$valendo = true;
 } 
-$mensagem = $imei . ':{' . substr($Jsonresul2, 0, -1) . '}';
 
+if($valendo || $row_cnt == 0)
+{
+	$valendo = false;
+$mensagem =  '{' . $Jsonresul2 .  ' "md5" : "0", "_imei" : "' . $imei . '" }';
+
+if ($row_cnt == 0)
+{
+	$mensagem =  '{ "md5" : "0", "_imei" : "' . $imeimovel . '" }';
+}
 
 $rec3 = mysqli_fetch_array($servidor);
 
@@ -33,7 +48,10 @@ $senha = $rec3['se_bb'];
 if($reter==1) {$reterned = '-r';};
 $output = shell_exec("mosquitto_pub -h mqttautodomo -d -u {$usuario} -P {$senha} -t '{$topico}' -m '{$mensagem}' -q 1 {$reterned}");
 
+	
+}else{
 
+}
 
 if(isset($_POST['btnSubmit'])) 
 	{

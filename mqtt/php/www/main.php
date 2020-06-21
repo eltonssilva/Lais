@@ -496,7 +496,10 @@ _mensagem_pub = {
 	_habilitado, 
 	_somente_local, 
 	_administrador,
-	_imei };
+	_imei,
+		md5: '0000' 
+	
+	};
 
 		$.post('pub.php',{mensagem: JSON.stringify(_mensagem_pub), topico: "/house/enablemobile/mobile", reter: "0"},function(data){
    })
@@ -2827,7 +2830,7 @@ if($habilitado == '0')
 
 <td> <?php echo $i; ?> </td>
 <td> 
-<a href="javascript: void(0);" onclick="window.open('usuario_ambiente.php?id=<?php echo $rec['id']; ?>', '<?php echo $rec['email']; ?> ', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=410');"><img src="/png/32/smartphone.png"><?php echo $rec['email']; ?></a>
+<a href="javascript: void(0);" onclick="window.open('usuario_ambiente.php?id=<?php echo $rec['id'] . '&imeimovel=' . $imei_movel; ?>', '<?php echo $rec['email']; ?> ', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=410');"><img src="/png/32/smartphone.png"><?php echo $rec['email']; ?></a>
 </td>
 <td> <?php echo $rec['imei']; ?> </td>
 <td>
