@@ -8,6 +8,7 @@
         "node-red-contrib-firebase": "~1.1.1",
         "node-red-contrib-hikcamera": "~1.1.8",
         "node-red-contrib-homekit": "~0.2.1",
+        "node-red-contrib-http-request": "~0.1.14",
         "node-red-contrib-image-tools": "~0.2.5",
         "node-red-contrib-md5": "~1.0.4",
         "node-red-contrib-onvif": "0.0.2",
