@@ -62,12 +62,12 @@ services:
     depends_on:
       - db
 
-  nodejs:
-    container_name: nodejs
-    image: eltonssilva/nodejs:armv7_1.0
-    restart: always
-    depends_on:
-      - db
+  # nodejs:
+  #   container_name: nodejs
+  #   image: eltonssilva/nodejs:armv7_1.0
+  #   restart: always
+  #   depends_on:
+  #     - db
 
   nodediverso: #OK
     container_name: nodediverso
