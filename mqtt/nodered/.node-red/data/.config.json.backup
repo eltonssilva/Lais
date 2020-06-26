@@ -972,23 +972,6 @@
     }
    }
   },
-  "node-red-contrib-alexa-local": {
-   "name": "node-red-contrib-alexa-local",
-   "version": "0.3.24",
-   "local": true,
-   "nodes": {
-    "alexa-local": {
-     "name": "alexa-local",
-     "types": [
-      "alexa-local"
-     ],
-     "enabled": true,
-     "local": true,
-     "module": "node-red-contrib-alexa-local",
-     "file": "/data/node_modules/node-red-contrib-alexa-local/index.js"
-    }
-   }
-  },
   "node-red-contrib-http-request": {
    "name": "node-red-contrib-http-request",
    "version": "0.1.14",
