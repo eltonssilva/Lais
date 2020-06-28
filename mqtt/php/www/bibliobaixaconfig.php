@@ -20,21 +20,21 @@ function SaveDates($result)
 		global $id;
 		
 	
-			$id =  $Jsonresult[0]['id'];
+			$id =  $Jsonresult['id'];
 			$Jsonresult = json_decode($result, TRUE);;
-		   $numeroserial =  $Jsonresult[0]['numeroserial'];
-		   $chavelocal =  $Jsonresult[0]['chavelocal'];
+		   $numeroserial =  $Jsonresult['numeroserial'];
+		   $chavelocal =  $Jsonresult['chavelocal'];
 		 //  $chavedispositivo =  $Jsonresult[0]['chavedispositivo'];
 		   $chavedispositivo = gerarSerial(12,4);
-		   $nome =  $Jsonresult[0]['nome'];
-		   $email =  $Jsonresult[0]['email'];
-		   $userid_gh =  $Jsonresult[0]['userid_gh'];
-		   $user_gbridge =  "u" . $Jsonresult[0]['userid_gh'];
-		   $apikey_gh =  $Jsonresult[0]['apikey_gh'];
-		   $apikey_id =  $Jsonresult[0]['apikey_id'];
-		   $usermqtt_gh =  $Jsonresult[0]['usermqtt_gh'];
-		   $senha =  $Jsonresult[0]['senha'];
-		   $senhamqtt_gh =  $Jsonresult[0]['senhamqtt'];
+		   $nome =  $Jsonresult['nome'];
+		   $email =  $Jsonresult['email'];
+		   $userid_gh =  $Jsonresult['userid_gh'];
+		   $user_gbridge =  "u" . $Jsonresult['userid_gh'];
+		   $apikey_gh =  $Jsonresult['apikey_gh'];
+		   $apikey_id =  $Jsonresult['apikey_id'];
+		   $usermqtt_gh =  $Jsonresult['usermqtt_gh'];
+		   $senha =  $Jsonresult['senha'];
+		   $senhamqtt_gh =  $Jsonresult['senhamqtt'];
 
 			if ($numeroserial != "")
 			{
@@ -87,20 +87,10 @@ function SaveDates($result)
 function GetDeviceSpecificInfor($pin, $token)
 {
 
-	$url = 'https://www.autodomo.com.br/post_get/gettoken.php';
-$data = array('pin' => $pin, 'token' => $token);
-	$options = array(
-    'http' => array(
-        'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-        'method'  => 'POST',
-        'content' => http_build_query($data)
-    	)
-	);
-    $context  = stream_context_create($options);
-  $result = file_get_contents($url, false, $context);
-//	$Jsonresult = json_decode($result);
-//	return  $Jsonresult->{'access_token'};
-//	if ($result === FALSE) { echo "Erro"; }
+	$url = "https://us-central1-autodomo-73076.cloudfunctions.net/getLais?pin={$pin}&token={$token}";
+
+  $result = file_get_contents($url);
+
 	$status_line = $http_response_header[0];
     preg_match('{HTTP\/\S*\s(\d{3})}', $status_line, $match);
     $status = $match[1];
