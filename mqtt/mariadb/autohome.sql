@@ -578,7 +578,7 @@ CREATE TABLE `servidor` (
 --
 
 INSERT INTO `servidor` (`id`, `nome`, `pin`, `usuario`, `ip`, `senha`, `usuarioadmin`, `senhaadmin`, `usu_bb`, `se_bb`, `email`, `chavelocal`, `chavedispositivo`, `user_gbridge`, `userid_gh`, `apikey_gh`, `bearertoken`, `apikey_id`, `usermqtt_gh`, `senha_user_gh`, `senhamqtt_gh`, `firmware`) VALUES
-(1, 'AutoDomo Padrão', 'c400000000000000', 'autodomo', '192.168.10.101', '5a52f891902098b1446706d1fd692ff2', 'admin', '5a52f891902098b1446706d1fd692ff2', 'autodomo', 'comida05', 'bancada@autodomum.com.br', '23534059835', 'ABCDEF254552', 'u2264', '2264', 'zG3dT5GzMxkxUQGx:CTSII3gQAG7CSjLCLdAhmkYuJetunNjv28CtLwcJMY92mHvF2uetq8QkMeVjNwEH9WYyVfI7sRijrS5XlHaGGjWACkMziUx0NG8WvrX2ncQQkngmztpn6H5otk4U5ZPJ', '', 436, 'gbridge-u2264', 'Comida$05$', 'Comida$05$', '2.0
+(1, 'AutoDomo Padrão', 'c400000000000000', 'autodomo', '192.168.10.101', '5a52f891902098b1446706d1fd692ff2', 'admin', '5a52f891902098b1446706d1fd692ff2', 'autohome', 'comida05', 'bancada@autodomum.com.br', '23534059835', 'ABCDEF254552', 'u2264', '2264', 'zG3dT5GzMxkxUQGx:CTSII3gQAG7CSjLCLdAhmkYuJetunNjv28CtLwcJMY92mHvF2uetq8QkMeVjNwEH9WYyVfI7sRijrS5XlHaGGjWACkMziUx0NG8WvrX2ncQQkngmztpn6H5otk4U5ZPJ', '', 436, 'gbridge-u2264', 'Comida$05$', 'Comida$05$', '2.0
 ');
 
 -- --------------------------------------------------------
