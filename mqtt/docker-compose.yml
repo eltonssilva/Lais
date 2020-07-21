@@ -85,7 +85,7 @@ services:
 
   nodekdb: #OK
     container_name: nodekdb
-    image: eltonssilva/nodekdb:armv7_1.0
+    image: eltonssilva/nodekdb:armv7_1.13
     restart: always
     network_mode: host
     volumes:
