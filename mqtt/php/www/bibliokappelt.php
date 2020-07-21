@@ -71,7 +71,7 @@ function Get_BearerToken_FromKapellt()
 //echo $APYKEY;
 		
 //$APYKEY = 'QyJmXq3XmgnJABkg:U0oxdWhwS092QVFtV3NCazhkc2gxd1lCVGo3dWVyR002aUFnRHlDUTY0VjJVYkh5YWtKUXYxNVVuUnEwdGh6MktaRVVRaHFLUmNLS21PQ2pTOWRpWlFxNWtKSUtpRExZQVlWNGYxb3p6c1RVTXFCR3FzVFI5aTlUWDNUWjl6eDk=';
-$url = 'https://gbridge.kappelt.net/api/v2/auth/token';
+$url = 'https://homegbridge.autodomo.com.br/api/v2/auth/token';
 $data = array('apikey' => $APYKEY);
 // use key 'http' even if you send the request to https://...
 	$options = array(
@@ -174,7 +174,7 @@ function SaveDates($result, $tipo, $device_id_autodomum)
 
 function GetAllDeviceInfor($BearerToken)
 {
-$url = "https://gbridge.kappelt.net/api/v2/device";
+$url = "https://homegbridge.autodomo.com.br/api/v2/device";
 	$options = array(
     'http' => array(
       //  'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
@@ -223,7 +223,7 @@ $data ="{
 		\"twofaPin\": \"string\"
 	}";
 	
-	$url = "https://gbridge.kappelt.net/api/v2/device";
+	$url = "https://homegbridge.autodomo.com.br/api/v2/device";
 	$options = array(
     'http' => array(
       //  'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
@@ -242,7 +242,7 @@ $data ="{
 
 function GetDeviceSpecificInfor($BearerToken, $device_id)
 {
-$url = "https://gbridge.kappelt.net/api/v2/device/{$device_id}";
+$url = "https://homegbridge.autodomo.com.br/api/v2/device/{$device_id}";
 	$options = array(
     'http' => array(
       //  'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
@@ -292,7 +292,7 @@ $data ="{
 		\"twofaPin\": \"string\"
 	}";
 	
-	$url = "https://gbridge.kappelt.net/api/v2/device/{$device_id}";
+	$url = "https://homegbridge.autodomo.com.br/api/v2/device/{$device_id}";
 //	echo $url . "<br>";
 	$options = array(
     'http' => array(
@@ -313,7 +313,7 @@ $data ="{
 
 function DeleteDeviceSpecific($BearerToken, $device_id)
 {
-$url = "https://gbridge.kappelt.net/api/v2/device/{$device_id}";
+$url = "https://homegbridge.autodomo.com.br/api/v2/device/{$device_id}";
 	$options = array(
     'http' => array(
       //  'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
@@ -340,7 +340,7 @@ function GetUserSpecificInfor($BearerToken, $userId, $displayName, $email, $mqtt
 	'mqttUsername' => $mqttUsername
 	);
 			
-$url = "https://gbridge.kappelt.net/api/v2/user";
+$url = "https://homegbridge.autodomo.com.br/api/v2/user";
 	$options = array(
     'http' => array(
       //  'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
@@ -371,7 +371,7 @@ function DeleteAllDevices($BearerToken)
 
 function SyncDevicesGoogleHome($BearerToken)
 {
-$url = "https://gbridge.kappelt.net/api/v2/requestsync";
+$url = "https://homegbridge.autodomo.com.br/api/v2/requestsync";
 	$options = array(
     'http' => array(
       //  'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
