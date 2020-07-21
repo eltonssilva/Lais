@@ -75,7 +75,6 @@ if(isset($_POST['btnSubmit']))
 	else
 	{
 		$bearertoken = Get_BearerToken_FromKapellt();
-		echo $bearertoken;
 		$result = UpdateDevice($bearertoken, $device_id_kappelt, $Descricao, $type_kappelt, $traits_type_kappelt, $requiresActionTopic_kappelt, $requiresStatusTopic_kappelt,  $traits_actionTopic,  $traits_statusTopic );
 		$result = SaveDates($result, 2, $id);  // Salva Bearer Tokem
 	}
@@ -109,7 +108,7 @@ if(isset($_POST['btnSubmit']))
     
 
 </script>
-<h5>Depois de Modificar click no botão "Atualizar" e depois "Fechar"</h5><b>
+<h5>Depois de Modificar click no botão "Atualizar" e depois "Fecha"</h5><b>
 <form class="w3-container w3-card-4" method="POST" name="frm">
 
 <label class="w3-label w3-text-blue"><b>Descricao</b></label>
