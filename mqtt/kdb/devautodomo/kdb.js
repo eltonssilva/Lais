@@ -32,6 +32,7 @@ function execSQLQuery(sqlQry, remote_address){
         console.log(error);
       } 
 
+      
       else
       {
         connection.end();
