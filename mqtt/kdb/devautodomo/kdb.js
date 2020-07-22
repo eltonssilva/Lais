@@ -38,7 +38,7 @@ function execSQLQuery(sqlQry, remote_address){
         connection.end();
         const servidor = JSON.parse(JSON.stringify(results));
         const { nome, pin, firmware } = servidor[0];
-        dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "iP": "' + ipServidor +  '", "firmware": "' + firmware + '"}';
+        dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ipServidor +  '", "firmware": "' + firmware + '"}';
         enviar_broker(remote_address, dados_servidor);
       }
 
@@ -137,7 +137,7 @@ function enviar_broker(_HOST, _PinServidor)
     if (err){
       throw err;
   } else{
-    console.log('Mensagem Enviada para ' + HOST +':'+ PORTA_ENTRADA);
+    console.log('Mensagem Enviada para ' + _HOST +':'+ PORTA_SAIDA);
   }
 
     client.close();

@@ -559,6 +559,7 @@ CREATE TABLE `servidor` (
   `senhaadmin` varchar(32) NOT NULL,
   `usu_bb` varchar(128) NOT NULL,
   `se_bb` varchar(257) NOT NULL,
+  `senhamqttlocal_cripto` varchar(257) NOT NULL,
   `email` varchar(128) NOT NULL,
   `chavelocal` varchar(62) NOT NULL,
   `chavedispositivo` varchar(12) NOT NULL,
@@ -578,8 +579,7 @@ CREATE TABLE `servidor` (
 --
 
 INSERT INTO `servidor` (`id`, `nome`, `pin`, `usuario`, `ip`, `senha`, `usuarioadmin`, `senhaadmin`, `usu_bb`, `se_bb`, `email`, `chavelocal`, `chavedispositivo`, `user_gbridge`, `userid_gh`, `apikey_gh`, `bearertoken`, `apikey_id`, `usermqtt_gh`, `senha_user_gh`, `senhamqtt_gh`, `firmware`) VALUES
-(1, 'AutoDomo Padrão', 'c400000000000000', 'autodomo', '192.168.10.101', '5a52f891902098b1446706d1fd692ff2', 'admin', '5a52f891902098b1446706d1fd692ff2', 'autohome', 'comida05', 'bancada@autodomum.com.br', '23534059835', 'ABCDEF254552', 'u2264', '2264', 'zG3dT5GzMxkxUQGx:CTSII3gQAG7CSjLCLdAhmkYuJetunNjv28CtLwcJMY92mHvF2uetq8QkMeVjNwEH9WYyVfI7sRijrS5XlHaGGjWACkMziUx0NG8WvrX2ncQQkngmztpn6H5otk4U5ZPJ', '', 436, 'gbridge-u2264', 'Comida$05$', 'Comida$05$', '2.0
-');
+(1, 'AutoDomo Padrao', 'c400000000000000', 'autodomo', '192.168.10.101', '5a52f891902098b1446706d1fd692ff2', 'admin', '5a52f891902098b1446706d1fd692ff2', 'autohome', 'comida05', 'PBKDF2$sha512$100000$QXl3bjd0Qnd2WE1nZ3VwYg==$dJCMzQEAfNliPjYumERkvio7HCKzOuC7b7gqsCjpFWzoEQtwgOXnFHfaeZBvKR8JsTI/BvPkBABsCVwWu11Jzw==' ,'bancada@autodomum.com.br', '23534059835', 'ABCDEF254552', 'u2264', '2264', 'zG3dT5GzMxkxUQGx:CTSII3gQAG7CSjLCLdAhmkYuJetunNjv28CtLwcJMY92mHvF2uetq8QkMeVjNwEH9WYyVfI7sRijrS5XlHaGGjWACkMziUx0NG8WvrX2ncQQkngmztpn6H5otk4U5ZPJ', '', 436, 'gbridge-u2264', 'Comida$05$', 'Comida$05$', '3.0');
 
 -- --------------------------------------------------------
 
