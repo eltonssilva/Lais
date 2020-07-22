@@ -43,6 +43,8 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     volumes:
       - ./mariadb:/docker-entrypoint-initdb.d
+    ports:
+      - 3306:3306
 
   # adminer: #OK
   #   container_name: adminer
@@ -83,17 +85,17 @@ services:
 
 
 
-  nodekdb: #OK
-    container_name: nodekdb
-    image: eltonssilva/nodekdb:armv7_1.13
-    restart: always
-    network_mode: host
-    volumes:
-      - ./nodediverso/kdb:/home/node/app/kdb
-      - ./configs:/home/node/app/configs
-    ports:
-      - 1979:1979
-      - 1980:1980
+  # nodekdb: #OK
+  #   container_name: nodekdb
+  #   image: eltonssilva/nodekdb:armv7_1.13
+  #   restart: always
+  #   network_mode: host
+  #   volumes:
+  #     - ./nodediverso/kdb:/home/node/app/kdb
+  #     - ./configs:/home/node/app/configs
+  #   ports:
+  #     - 1979:1979
+  #     - 1980:1980
 
   supervisorio: #OK
     container_name: supervisorio
