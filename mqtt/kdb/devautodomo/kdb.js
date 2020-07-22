@@ -32,7 +32,7 @@ function execSQLQuery(sqlQry, remote_address){
         console.log(error);
       } 
 
-      
+
       else
       {
         connection.end();
@@ -53,6 +53,7 @@ function execSQLQuery2(sqlQry){
   connection.query(sqlQry, function(error, results, fields){
       if(error){
         console.log(error);
+        process.exit(1);
       } 
 
       else
