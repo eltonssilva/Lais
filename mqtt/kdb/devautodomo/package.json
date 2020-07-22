@@ -1,0 +1,17 @@
+{
+  "name": "kdb",
+  "version": "1.0.0",
+  "description": "Pega o Ip do Sistema",
+  "main": "kdb.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Elton de Sousa e Silva",
+  "license": "MIT",
+  "dependencies": {
+    "dgram": "^1.0.1",
+    "fs": "0.0.1-security",
+    "mysql": "^2.18.1",
+    "os": "^0.1.1"
+  }
+}
