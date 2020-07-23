@@ -59,7 +59,7 @@ services:
 
   homeGbridge:
     container_name: homeGbridge
-    image: eltonssilva/gbridgeconnect:armv7_1.0
+    image: eltonssilva/gbridgeconnect:armv7_1.1
     restart: always
     depends_on:
       - db
