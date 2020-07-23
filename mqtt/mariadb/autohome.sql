@@ -579,7 +579,7 @@ CREATE TABLE `servidor` (
 -- Despejando dados para a tabela `servidor`
 --
 
-INSERT INTO `servidor` (`id`, `nome`, `pin`, `usuario`, `ip`, `senha`, `usuarioadmin`, `senhaadmin`, `usu_bb`, `se_bb`, `email`, `chavelocal`, `chavedispositivo`, `user_gbridge`, `userid_gh`, `apikey_gh`, `bearertoken`, `apikey_id`, `usermqtt_gh`, `senha_user_gh`, `senhamqtt_gh`, `firmware`) VALUES
+INSERT INTO `servidor` (`id`, `nome`, `pin`, `usuario`, `ip`, `senha`, `usuarioadmin`, `senhaadmin`, `usu_bb`, `se_bb`, `senhamqttlocal_cripto`, `email`, `chavelocal`, `chavedispositivo`, `user_gbridge`, `userid_gh`, `apikey_gh`, `bearertoken`, `apikey_id`, `usermqtt_gh`, `senha_user_gh`, `senhamqtt_gh`, `adddevicehabilitado`, `firmware`) VALUES
 (1, 'AutoDomo Padrao', 'c400000000000000', 'autodomo', '192.168.10.101', '5a52f891902098b1446706d1fd692ff2', 'admin', '5a52f891902098b1446706d1fd692ff2', 'autohome', 'comida05', 'PBKDF2$sha512$100000$QXl3bjd0Qnd2WE1nZ3VwYg==$dJCMzQEAfNliPjYumERkvio7HCKzOuC7b7gqsCjpFWzoEQtwgOXnFHfaeZBvKR8JsTI/BvPkBABsCVwWu11Jzw==' ,'bancada@autodomum.com.br', '23534059835', 'ABCDEF254552', 'u2264', '2264', 'zG3dT5GzMxkxUQGx:CTSII3gQAG7CSjLCLdAhmkYuJetunNjv28CtLwcJMY92mHvF2uetq8QkMeVjNwEH9WYyVfI7sRijrS5XlHaGGjWACkMziUx0NG8WvrX2ncQQkngmztpn6H5otk4U5ZPJ', '', 436, 'gbridge-u2264', 'Comida$05$', 'Comida$05$', 1,'3.0');
 
 -- --------------------------------------------------------

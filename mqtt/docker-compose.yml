@@ -46,14 +46,7 @@ services:
     ports:
       - 3306:3306
 
-  # adminer: #OK
-  #   container_name: adminer
-  #   image: adminer
-  #   restart: always
-  #   ports:
-  #     - 8080:8080
-  #   depends_on:
-  #     - db
+
 
   phpMyAdmin:
     container_name: phpMyAdmin
@@ -64,12 +57,12 @@ services:
     depends_on:
       - db
 
-  # nodejs:
-  #   container_name: nodejs
-  #   image: eltonssilva/nodejs:armv7_1.0
-  #   restart: always
-  #   depends_on:
-  #     - db
+  homeGbridge:
+    container_name: homeGbridge
+    image: eltonssilva/gbridgeconnect:armv7_1.0
+    restart: always
+    depends_on:
+      - db
 
   nodediverso: #OK
     container_name: nodediverso

@@ -2,8 +2,6 @@ var app = require('./config/server');
 var mqttConnection = require('./config/mqttConnection');
 const mqttGridgeSub = require('./app/mqttGbridge/mqttGridgeSub');
 const mqttGridgePub = require('./app/mqttGbridge/mqttGridgePub');
-const servidorModel = require('./app/models/servidorModel');
-const dadosservidor = require('./app/servidorautodomo/dadosservidor');
 
 var dbconnection = require('./config/dbConnection');
 var connection = dbconnection.dbproducao();
@@ -35,14 +33,13 @@ var se_bb = "";
 			console.log("PinServidor=", PinServidor);
 	
 			var ClienteMQTTLocal = mqttConnection.MqttLocal(usu_bb, se_bb, PinServidor);
-			var ClienteMQTTAutodomum = mqttConnection.MqttAutodomum("", "", PinServidor);
 	    var ClienteMQTTGbridge = mqttConnection.MqttBridge(usermqtt_gh, senhamqtt_gh, PinServidor);
 
 			ClienteMQTTGbridge.on('connect', function() 
 			{ // When connected
 				console.log("Conectado Gbridge");
 				var topico ='gBridge/' + user_gbridge + '/#';
-				//console.log(topico);
+				console.log(topico);
 				ClienteMQTTGbridge.subscribe(topico);
 				ClienteMQTTGbridge.on('message', function(topic, message) 
 				{
@@ -69,25 +66,6 @@ var se_bb = "";
 		ClienteMQTTGbridge.on('error', function(err) {
 			console.log("ErroGbridge:" + err);
 		});
-
-
-
-ClienteMQTTAutodomum.on('connect', function() 
-{ // When connected
-	console.log("Conectado Autodomum");
-	ClienteMQTTAutodomum.subscribe('/servidor/' + PinServidor + '/comando');
-
-	ClienteMQTTAutodomum.on('message', function(topic, message) 
-	{
-		ClienteMQTTLocal.publish('/servidor/comando/geral2', message);
-		console.log("Autodomum-" + message.toString());
-
-	});
-});
-
-ClienteMQTTAutodomum.on('error', function(err) {
-	console.log("ErroAutodomum:" + err);
-});
 
 
 
