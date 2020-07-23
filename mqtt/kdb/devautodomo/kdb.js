@@ -24,7 +24,7 @@ const dadosdb = {
 
 
 
-function execSQLQuery(sqlQry, remote_address){
+function execSQLQuery(sqlQry, remote_address, dadosRemoteDevice){
   const connection = mysql.createConnection(dadosdb);
 
   connection.query(sqlQry, function(error, results, fields){
@@ -37,8 +37,31 @@ function execSQLQuery(sqlQry, remote_address){
       {
         connection.end();
         const servidor = JSON.parse(JSON.stringify(results));
-        const { nome, pin, firmware } = servidor[0];
-        dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ipServidor +  '", "firmware": "' + firmware + '"}';
+        const { nome, pin, firmware, usu_bb, se_bb, chavedispositivo, adddevicehabilitado } = servidor[0];
+        let dados_servidor = "";
+        if (dadosRemoteDevice.tipo == "kdb"){
+          dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ipServidor +  '", "firmware": "' + firmware + '"}';
+         }
+         else if ((dadosRemoteDevice.tipo == "kdbc") && (dadosRemoteDevice.pin == pin) )
+         {
+           if (!dadosRemoteDevice.chave)
+           {
+            dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ipServidor +  '", "firmware": "' + firmware + '"}';
+           }
+           else if (dadosRemoteDevice.chave == chavedispositivo)
+           {
+             if (adddevicehabilitado == "1")
+             {
+              dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ipServidor +  '", "firmware": "' + firmware +   '", "usermqtt": "' + usu_bb +  '", "passmqtt": "' + se_bb +'"}';
+             }
+             else{
+              dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ipServidor +  '", "firmware": "' + firmware + '"}';
+             }
+            
+           }
+         
+         }
+       
         enviar_broker(remote_address, dados_servidor);
       }
 
@@ -66,10 +89,6 @@ function execSQLQuery2(sqlQry){
 
 
 
-
-
-
-console.log(dadosdb);
 
 Object.keys(ifaces).forEach(function (ifname) {
   var alias = 0;
@@ -113,11 +132,10 @@ server.on('message', function(message, remote) {
 
 
 let dadosRemoteDevice = JSON.parse(message + "");
-var dados_servidor="";
 
-if (dadosRemoteDevice.tipo == "kdb")
+if ((dadosRemoteDevice.tipo == "kdb") || (dadosRemoteDevice.tipo == "kdbc"))
 {
-  execSQLQuery("SELECT * FROM `servidor`", remote.address);
+  execSQLQuery("SELECT * FROM `servidor`", remote.address, dadosRemoteDevice);
 
 }
  
