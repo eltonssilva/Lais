@@ -38,6 +38,7 @@ function execSQLQuery(sqlQry, remote_address, dadosRemoteDevice){
         connection.end();
         const servidor = JSON.parse(JSON.stringify(results));
         const { nome, pin, firmware, usu_bb, se_bb, chavedispositivo, adddevicehabilitado } = servidor[0];
+
         let dados_servidor = "";
         if (dadosRemoteDevice.tipo == "kdb"){
           dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ipServidor +  '", "firmware": "' + firmware + '"}';
@@ -60,6 +61,10 @@ function execSQLQuery(sqlQry, remote_address, dadosRemoteDevice){
             
            }
          
+         }
+         else if ((dadosRemoteDevice.tipo == "kdbf") && adddevicehabilitado == "1")
+         {
+              dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ipServidor +  '", "firmware": "' + firmware +   '", "usermqtt": "' + usu_bb +  '", "passmqtt": "' + se_bb +'"}'; 
          }
        
         enviar_broker(remote_address, dados_servidor);
@@ -133,7 +138,7 @@ server.on('message', function(message, remote) {
 
 let dadosRemoteDevice = JSON.parse(message + "");
 
-if ((dadosRemoteDevice.tipo == "kdb") || (dadosRemoteDevice.tipo == "kdbc"))
+if ((dadosRemoteDevice.tipo == "kdb") || (dadosRemoteDevice.tipo == "kdbc") || (dadosRemoteDevice.tipo == "kdbf") )
 {
   execSQLQuery("SELECT * FROM `servidor`", remote.address, dadosRemoteDevice);
 
