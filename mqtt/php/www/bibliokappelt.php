@@ -260,6 +260,7 @@ $url = "https://homegbridge.com/api/v2/device/{$device_id}";
 function UpdateDevice($BearerToken, $device_id, $name, $type, $traits_type, $traits_requiresActionTopic, $traits_requiresStatusTopic,  $traits_actionTopi,   $traits_statusTopic)
 {
 
+	
 $array_traits_type = explode('-', $traits_type);
 
 $_Str_Type = "";

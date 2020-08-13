@@ -71,6 +71,25 @@ var semi_topico = data.substring(barra2+1,barra3);
 	   {
 	   	$("#codigo433mhz1").text("Codigo Controle: " + valor);
 	   }
+
+		 if ( semi_topico == "newdevice")
+	   {
+	   	$("#newdevice").text(valor);
+	   }
+
+		 if ( semi_topico == "nablenewdevice")
+	   {
+			
+			 if (valor == "1")
+			 {
+				$("#newdeviceHabilitado").prop('disabled', true);
+			 }else{
+				$("#newdeviceHabilitado").prop('disabled', false);
+			 }
+
+	   	
+	   }
+	   
 	   
 	  
 	   if (semi_topico == 'iluminacao') 
@@ -682,8 +701,29 @@ mysqli_close($con);
 
 ?>
 
+
 <div id="content"> 
 <div id="tab1">
+<div id="divnewdevice">
+
+<table style="width:100%">
+<tr>
+<th>
+<h6 id="newdevice"></h6>
+</th>
+<th style="text-align: right;">
+</th>
+<th style="text-align: right;">
+<button onclick="pubmqtt('newdeviceHabilitado', '/houseconf/nablenewdevice/habilitar' ,'0')"  id="newdeviceHabilitado"> Habilitar Novos Dispositivos </button>
+</th>
+</tr>
+</table>
+
+
+
+
+
+</div>
 <div class="w3-panel w3-light-grey w3-round-xlarge">
 <p>
 <table border="0" cellpadding="0">
@@ -743,13 +783,13 @@ elseif ($valor == "Off")
 <th><?php echo $desc_ambiente; ?></th>
  <th> 
   
-  <div class="onoffswitch">
- <input type="checkbox" onclick="return pubmqtt('myonoffswitch<?php echo $rec['id']; ?>', '<?php echo $rec['setPubTopic0']; ?>', '1')" name="onoffswitch<?php echo $rec['id']; ?>"  class="onoffswitch-checkbox <?php echo $rec['id']; ?>" id="myonoffswitch<?php echo $rec['id']; ?>" value="on" <?php  echo $checked ?> >
+<div class="onoffswitch">
+<input type="checkbox" onclick="return pubmqtt('myonoffswitch<?php echo $rec['id']; ?>', '<?php echo $rec['setPubTopic0']; ?>', '1')" name="onoffswitch<?php echo $rec['id']; ?>"  class="onoffswitch-checkbox <?php echo $rec['id']; ?>" id="myonoffswitch<?php echo $rec['id']; ?>" value="on" <?php  echo $checked ?> >
 <label class="onoffswitch-label" for="myonoffswitch<?php echo $rec['id']; ?>">
 <span class="onoffswitch-inner"></span>
 <span class="onoffswitch-switch"></span>
 </label>
-  </div>
+</div>
    
 
 

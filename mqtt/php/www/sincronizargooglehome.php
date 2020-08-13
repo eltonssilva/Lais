@@ -37,7 +37,7 @@ $requiresStatusTopic_kappelt = trim($rec['requiresStatusTopic_kappelt']);
 
 $traits_actionTopic = substr($topico, 7);
 $lastIndex = strripos($traits_actionTopic, "/");
-	if (requiresActionTopic_kappelt == 0)
+	if (requiresActionTopic_kappelt == "0")
 	{
 	$traits_statusTopic = $traits_actionTopic;
 	}

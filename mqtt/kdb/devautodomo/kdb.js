@@ -37,37 +37,39 @@ function execSQLQuery(sqlQry, remote_address, dadosRemoteDevice){
       {
         connection.end();
         const servidor = JSON.parse(JSON.stringify(results));
-        const { nome, pin, firmware, usu_bb, se_bb, chavedispositivo, adddevicehabilitado } = servidor[0];
+        const { nome, pin, firmware, usu_bb, se_bb, chavedispositivo, adddevicehabilitado, ip } = servidor[0];
 
         let dados_servidor = "";
         if (dadosRemoteDevice.tipo == "kdb"){
-          dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ipServidor +  '", "firmware": "' + firmware + '"}';
-         }
+          dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ip +  '", "firmware": "' + firmware + '"}';
+          enviar_broker(remote_address, dados_servidor); 
+        }
          else if ((dadosRemoteDevice.tipo == "kdbc") && (dadosRemoteDevice.pin == pin) )
          {
            if (!dadosRemoteDevice.chave)
            {
-            dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ipServidor +  '", "firmware": "' + firmware + '"}';
+            dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ip +  '", "firmware": "' + firmware + '"}';
            }
            else if (dadosRemoteDevice.chave == chavedispositivo)
            {
              if (adddevicehabilitado == "1")
              {
-              dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ipServidor +  '", "firmware": "' + firmware +   '", "usermqtt": "' + usu_bb +  '", "passmqtt": "' + se_bb +'"}';
+              dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ip +  '", "firmware": "' + firmware +   '", "usermqtt": "' + usu_bb +  '", "passmqtt": "' + se_bb +'"}';
              }
              else{
-              dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ipServidor +  '", "firmware": "' + firmware + '"}';
+              dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ip +  '", "firmware": "' + firmware + '"}';
              }
             
            }
-         
+           enviar_broker(remote_address, dados_servidor);
          }
          else if ((dadosRemoteDevice.tipo == "kdbf") && adddevicehabilitado == "1")
          {
-              dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ipServidor +  '", "firmware": "' + firmware +   '", "usermqtt": "' + usu_bb +  '", "passmqtt": "' + se_bb +'"}'; 
-         }
+              dados_servidor = '{ "nome": "' + nome + '", "pin": "' + pin + '", "ip": "' + ip +  '", "firmware": "' + firmware +   '", "usermqtt": "' + usu_bb +  '", "passmqtt": "' + se_bb +'"}'; 
+              enviar_broker(remote_address, dados_servidor);
+        }
        
-        enviar_broker(remote_address, dados_servidor);
+        
       }
 
   });
