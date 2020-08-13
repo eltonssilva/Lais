@@ -236,6 +236,7 @@ $data ="{
     $context  = stream_context_create($options);
 //	echo $data . "<br>";
 	$result = file_get_contents($url, false, $context);
+	SyncDevicesGoogleHome($BearerToken);
 	return $result;
 
 }
@@ -307,6 +308,7 @@ $data ="{
     $context  = stream_context_create($options);
 	//echo $data . "<br>";
 	$result = file_get_contents($url, false, $context);
+	SyncDevicesGoogleHome($BearerToken);
 	return $result;
 
 }
@@ -327,7 +329,8 @@ $url = "https://homegbridge.com/api/v2/device/{$device_id}";
 	//echo json_encode($data) . "<br>";
 	$result = file_get_contents($url, false, $context);
 	$status_line = $http_response_header[0];
-    preg_match('{HTTP\/\S*\s(\d{3})}', $status_line, $match);
+		preg_match('{HTTP\/\S*\s(\d{3})}', $status_line, $match);
+		SyncDevicesGoogleHome($BearerToken);
     return $status = $match[1];
 }
 
@@ -367,6 +370,7 @@ function DeleteAllDevices($BearerToken)
 	DeleteDeviceSpecific($BearerToken, $device_id);
 	$i++;
 	}
+	SyncDevicesGoogleHome($BearerToken);
 	return $i;
 }
 
