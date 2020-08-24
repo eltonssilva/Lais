@@ -793,6 +793,7 @@ CREATE TABLE `zigbee2mqtt` (
 CREATE TABLE `zigbeedevice` (
   `id` int(11) NOT NULL,
   `serialzigbee` varchar(128) NOT NULL,
+  `modelo` varchar(255) NOT NULL,
   `carga` varchar(128) NOT NULL,
   `acao` varchar(12) NOT NULL DEFAULT 'NOK',
   `topico` varchar(128) NOT NULL,
