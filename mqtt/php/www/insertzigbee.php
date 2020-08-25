@@ -236,7 +236,7 @@ mysqli_close($con);
 
 
     $(document).ready(function () {
-		$( "#btnSubmit" ).prop( "disabled", true );
+	//	$( "#btnSubmit" ).prop( "disabled", true );
         $('#btn').click(function () {
             window.opener.location.reload(true);
             window.close();
