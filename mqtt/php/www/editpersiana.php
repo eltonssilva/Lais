@@ -15,7 +15,7 @@ if(isset($_POST['btnSubmit']))
 		$estado = $_POST['estado'];
 $query = "SELECT id, Descricao, proprietario, setName0, setSubTopic0, setPubTopic0  FROM `widget` where id='{$id_widget}'";
 //echo $query;
-mysqli_set_charset('utf8');
+mysqli_set_charset($con, 'utf8');
 $studentData = mysqli_query($con, $query);
 while($rec = mysqli_fetch_array($studentData)) { 
 $id_widget = $rec['id']; 
@@ -51,11 +51,11 @@ $setPubTopic0 = $rec['setPubTopic0'];
 https://www.google.com.br/imgres?imgurl=https%3A%2F%2Fcdn.thingiverse.com%2Frenders%2F49%2Fb5%2F4b%2F04%2F42%2Fe023d34b7527edf41a67d4ed8d8c2bf8_preview_card.JPG&imgrefurl=https%3A%2F%2Fwww.thingiverse.com%2Ftag%3ALDR&docid=lUih5DXbU7RTwM&tbnid=RTemp4y2E8d94M%3A&vet=10ahUKEwj1zcSpw7rbAhUKgJAKHdUwBYsQMwg6KAMwAw..i&w=292&h=219&bih=641&biw=1366&q=ldr%20THINGIVERSE%20esp8266&ved=0ahUKEwj1zcSpw7rbAhUKgJAKHdUwBYsQMwg6KAMwAw&iact=mrc&uact=8
 
 $query = "SELECT id, Descricao, setName0, setSubTopic0, setPubTopic0  FROM `widget` where widget.tipo_geral = 9";
-mysqli_set_charset('utf8');
+mysqli_set_charset($con, 'utf8');
 $studentData = mysqli_query($con, $query);
 
 $query = "SELECT * FROM `rx433mhz_persiana` where id ={$id}";
-mysqli_set_charset('utf8');
+mysqli_set_charset($con, 'utf8');
 $interruptor = mysqli_query($con, $query);
 mysqli_close($con);
 while($recinterruptor = mysqli_fetch_array($interruptor)) { 
