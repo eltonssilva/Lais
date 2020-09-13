@@ -13,7 +13,7 @@ if(isset($_POST['btnSubmit']))
 		$habilitado = $_POST['habilitado'];
 		$estado = $_POST['estado'];
 $query = "SELECT id, Descricao, proprietario, setName0, setSubTopic0, setPubTopic0  FROM `widget` where id='{$id}'";
-mysqli_set_charset('utf8');
+mysqli_set_charset($con,  'utf8');
 $studentData = mysqli_query($con, $query);
 while($rec = mysqli_fetch_array($studentData)) { 
 $id_widget = $rec['id']; 
