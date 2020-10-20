@@ -2011,7 +2011,7 @@ TAB Controles Infravermelho
 <ul class="w3-navbar w3-black">
   <li><a href="javascript:void(0)" onclick="openCity('condicionador')">Condicionador de Ar</a></li>
   <li><a href="javascript:void(0)" onclick="openCity('tv')">TV e Mídia</a></li>
-  <li><a href="javascript:void(0)" onclick="openCity('controles')">Associar Controles</a></li>
+  <!-- <li><a href="javascript:void(0)" onclick="openCity('controles')">Associar Controles</a></li> -->
 </ul>
 
 <div id="condicionador" class="w3-container notificacao">

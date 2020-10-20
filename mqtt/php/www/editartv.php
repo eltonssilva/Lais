@@ -46,7 +46,7 @@ if(isset($_POST['btnSubmit']))
 //echo $query . " " . $confirma1;
 
 $query = "SELECT * FROM `comandos_infrared` WHERE tipoequipamento = '2'";
-mysqli_set_charset('utf8');
+mysqli_set_charset($con, 'utf8');
 $studentData = mysqli_query($con, $query);
 //$recStudent = mysql_fetch_array($studentData);
 mysqli_close($con);

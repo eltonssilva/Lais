@@ -27,7 +27,7 @@ services:
     ports:
       - 1880:1880
       - 8082:8082
-      - 8123:8123 # Web
+      - 8080:8080 # Web
     volumes:
       - ./nodered/.node-red/data:/data
 
@@ -80,7 +80,7 @@ services:
 
   # nodekdb: #OK
   #   container_name: nodekdb
-  #   image: eltonssilva/nodekdb:armv7_1.13
+  #   image: eltonssilva/nodekdb:armv7_1.f50187        eltonssilva/gbridgeconnect:armv7_1.1   "docker-entrypoint.s…"   7 minutes ago       Up 6 minutes                                                                               homeGbridge13
   #   restart: always
   #   network_mode: host
   #   volumes:

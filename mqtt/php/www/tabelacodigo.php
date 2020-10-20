@@ -1,5 +1,6 @@
-<html dir="ltr" lang="pt-BR" style=""><head>
+<html dir="ltr" lang="pt-BR" style="">
 <head>
+</head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>AutoHome</title>
 <meta charset="UTF-8">
@@ -8,7 +9,7 @@
 <link href="/css/w3.css" rel="stylesheet" type="text/css"/> 
 
 <?php
-header("Content-Type: text/html; charset=UTF-8",true);
+
 require_once("usuario/dados_bd.php");
 $con = mysqli_connect($DB_SERVER, $DB_USER, $DB_PASS, $DB_NAME);
 $msg = "";
@@ -19,7 +20,7 @@ $msg = "";
 		
 
 $query = "SELECT * FROM `controle_ir` where dispositivo = '{$id_dispositivo}' ORDER BY `id` ASC";
-mysqli_set_charset('utf8');
+mysqli_set_charset($con, 'utf8');
 $data = mysqli_query($con, $query);
 mysqli_close($con);
 ?>
@@ -58,7 +59,7 @@ if ($rec['modo'] == 4)
 <td> <?php echo $rec['descricaocomando']; ?> </td>
 <td> <?php echo $rec['codigo']; ?> </td>
 <td> <?php echo $observacao; ?> </td>
-<td align="center"> <a onClick="return confirm('Tem Certeza que deseja deletar!')" href="deletecodigoinfrared.php?id=<?php echo $rec['id'] . "&" . id_dispositivo ."=". $id_dispositivo; ?>"><img src="/png/32/delete.png"></a> </td>
+<td align="center"> <a onClick="return confirm('Tem Certeza que deseja deletar!')" href="deletecodigoinfrared.php?id=<?php echo $rec['id'] . "&" . "id_dispositivo=". $id_dispositivo; ?>"><img src="/png/32/delete.png"></a> </td>
 </tr>
 <?php } ?>
 </table>

@@ -48,7 +48,14 @@ $query = "SELECT * FROM `protocolo_infrared`";
 mysqli_set_charset($con, 'utf8');
 $studentData = mysqli_query($con, $query);
 //$recStudent = mysql_fetch_array($studentData);
+
+
+$query = "SELECT REPLACE (widget.username_iphone, ':', '') equipamento, Descricao FROM `widget` WHERE tipo_geral = 10 ORDER BY `widget`.`username_iphone` ASC";
+mysqli_set_charset($con, 'utf8');
+$equipamento = mysqli_query($con, $query);
+//$recStudent = mysql_fetch_array($studentData);
 mysqli_close($con);
+
 ?>
 
 <html>
@@ -79,13 +86,20 @@ mysqli_close($con);
 </script>
 <h5>Depois de Modificar click no botão "Atualizar" e depois "Fecha"</h5><b>
 <form class="w3-container w3-card-4" method="POST" name="frm" id="frm">
-<label class="w3-label w3-text-blue"><b>Descrição</b></label>
+<label class="w3-label w3-text-blue"><b>Codigo (Pin Device) Transmissor InfraVermelho</b></label>
 <input type="text" class="w3-input w3-border" value="" name="descricao" id="descricao" maxlength=16/>
 
-<label class="w3-label w3-text-blue"><b>Marca</b></label>
-<input type="text" class="w3-input w3-border" value="" name="marca" id="marca" maxlength=16/>
+<label class="w3-label w3-text-blue"><b>Equipamento (Ar Condicionado) </b></label>
+        <select class="w3-input w3-border" name="marca" id="marca">
+                    <?php 
+                    while($rec = mysqli_fetch_array($equipamento)) { 
+                         echo "<option value=" . $rec['equipamento'] . ">" . $rec['Descricao'] . "</option>"; 
+                     } 
+                     ?>
+       </select>
 
-<label class="w3-label w3-text-blue"><b>Modelo</b></label>
+
+<label class="w3-label w3-text-blue"><b>Modelo (Ar Condicionado, TV e ETC)</b></label>
 <input type="text" class="w3-input w3-border" value="" name="modelo" id="modelo" maxlength=16/>
 
 
