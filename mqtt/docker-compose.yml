@@ -27,7 +27,7 @@ services:
     ports:
       - 1880:1880
       - 8082:8082
-      - 8080:8080 # Web
+      - 80:8080 # Web
     volumes:
       - ./nodered/.node-red/data:/data
 
@@ -96,7 +96,7 @@ services:
     restart: always
 
     ports:
-      - 80:80
+      - 8080:80
       - 443:443
     volumes:
       - ./php/www:/var/www/html/
