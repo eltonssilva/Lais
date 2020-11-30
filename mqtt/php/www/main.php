@@ -2095,8 +2095,9 @@ mysqli_close($con);
 <?php } ?>
 </table>
 
-<a href="javascript: void(0);" onclick="window.open('insertcondicionadordear.php', 'Adcionar Condicionador de Ar', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=520');">Adcionar Condicionador de Ar</a>
+<a href="javascript: void(0);" onclick="window.open('insertcondicionadordear.php', 'Adcionar Controle AutoDomo', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=520');"><img src="/png/32/autodomo.png">Adcionar Controle AutoDomo</a>
     
+<a href="javascript: void(0);" onclick="window.open('insertcondicionadordear_tuya.php', 'Adcionar Controle AutoDomo', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=520');"><img src="/png/32/tuya.png">Adcionar Controle Tuya</a>
 </div>
 
 <div id="tv" class="w3-container notificacao" style="display:none">
