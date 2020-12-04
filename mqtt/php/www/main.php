@@ -2077,7 +2077,7 @@ mysqli_close($con);
      
 <table border="1" cellpadding="5">
 <tr>
-<th>Id</th> <th>Descrição</th> <th>Marca</th> <th>Modelo</th> <th>Nome Protocolo</th> <th>Número de bits</th>  <th colspan="2">Ação</th>
+<th>Id</th> <th>Descrição</th> <th>Código AutoDomo</th> <th>Modelo</th> <th>Nome Protocolo</th> <th>Número de bits</th>  <th colspan="2">Ação</th>
 </tr>
 
 <?php while($rec = mysqli_fetch_array($data)) { ?>
@@ -2090,7 +2090,7 @@ mysqli_close($con);
 <td> <?php echo $rec['numerobit']; ?> </td>
 <!--<td> <a href="editpushover.php?id=<?php echo $rec['id']; ?>">Editar</a> </td> -->
   <td>   <a href="javascript: void(0);" onclick="window.open('editarcondicionado.php?id=<?php echo $rec['id']. "&descricao=" . $rec['Descricao'];  ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=420');"><img src="/png/32/edit.png"></a></td>
-<td align="center"> <a onClick="return confirm('Tem Certeza que deseja deletar!')" href="deleteinfrared.php?id=<?php echo $rec['id']; ?>"><img src="/png/32/delete.png"></a> </td>
+<td align="center"> <a onClick="return confirm('Tem Certeza que deseja deletar!')" href="deleteinfrared.php?id=<?php echo $rec['id']; ?>&marca=<?php echo $rec['Marca']; ?>"><img src="/png/32/delete.png"></a> </td>
 </tr>
 <?php } ?>
 </table>
@@ -2132,7 +2132,11 @@ mysqli_close($con);
 <?php } ?>
 </table>
 
-<a href="javascript: void(0);" onclick="window.open('inserttv.php', 'Adcionar Tv e Midia', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=580');">Adcionar TV e Midia</a>
+
+<a href="javascript: void(0);" onclick="window.open('inserttv.php', 'Adcionar Controle AutoDomo', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=520');"><img src="/png/32/autodomo.png">Adcionar Controle AutoDomo</a>
+    
+<a href="javascript: void(0);" onclick="window.open('insertcondicionadordetv_tuya.php', 'Adcionar Controle Tuya', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=520');"><img src="/png/32/tuya.png">Adcionar Controle Tuya</a>
+
 </div>
 
 <div id="controles" class="w3-container notificacao" style="display:none">

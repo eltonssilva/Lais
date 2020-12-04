@@ -23,7 +23,7 @@ if(isset($_POST['btnSubmit']))
        
 
         $query =  "INSERT INTO `equipamento_infrared` (`id`, `Descricao`, `Marca`, `Modelo`, `nomeprotocolo`, `numerobit`, `tipoprotocolo`,  `repeticao`, `tipoequipamento`) 
-        VALUES (NULL, '{$remote_name}', '{$marca}', 'TUYA', '', '', '',  '', '1');";
+        VALUES (NULL, '{$remote_name}', '{$marca}', 'TUYA', '', '', '',  '', '2');";
 
             if(mysqli_query($con, $query))
             {
@@ -56,7 +56,7 @@ $studentData = mysqli_query($con, $query);
 //$recStudent = mysql_fetch_array($studentData);
 
 
-$query = "SELECT REPLACE (widget.username_iphone, ':', '') equipamento, Descricao FROM `widget` WHERE tipo_geral = 10 ORDER BY `widget`.`username_iphone` ASC";
+$query = "SELECT REPLACE (widget.username_iphone, ':', '') equipamento, Descricao FROM `widget` WHERE tipo_geral = 11 ORDER BY `widget`.`username_iphone` ASC";
 mysqli_set_charset($con, 'utf8');
 $equipamento = mysqli_query($con, $query);
 //$recStudent = mysql_fetch_array($studentData);
