@@ -392,7 +392,7 @@ if(isset($_POST['btnSalvar']))
 	
 		if($id_ == '15') //Para Lampadas
 	{		
-	$tipo = '15';       //(Android) Ler Valor=0, Chave=1, Botão=2, Led=3, Slider=4, Cabeçalho=5, Medir=6, Grafico=7, Buttons set=8, Combo box=9 
+	$tipo = '1';       //(Android) Ler Valor=0, Chave=1, Botão=2, Led=3, Slider=4, Cabeçalho=5, Medir=6, Grafico=7, Buttons set=8, Combo box=9 
 	$tipo_geral = '15'; //Geral(não Mostrar no site)=0 Chave Lampada=1, Sensor de Humidade=2, Sensor de Temperatura=3; Nivel de Luz=4, RGB Lampada=5  // Sensor porta=17
 	$dispositivo_fisico = '1'; //é dispositivo fisico? Sim=1, Não=0
 	$proprietario = '1'; // Dispositivo é Propriedade da Autohome? Sim=1, Não=0
