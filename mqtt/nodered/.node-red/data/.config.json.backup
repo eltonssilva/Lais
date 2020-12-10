@@ -989,6 +989,130 @@
     }
    }
   },
+  "node-red-contrib-alexa-local": {
+   "name": "node-red-contrib-alexa-local",
+   "version": "0.3.24",
+   "local": true,
+   "nodes": {
+    "alexa-local": {
+     "name": "alexa-local",
+     "types": [
+      "alexa-local"
+     ],
+     "enabled": false,
+     "local": true,
+     "module": "node-red-contrib-alexa-local",
+     "file": "/data/node_modules/node-red-contrib-alexa-local/index.js"
+    }
+   }
+  },
+  "node-red-contrib-nora": {
+   "name": "node-red-contrib-nora",
+   "version": "0.0.34",
+   "local": true,
+   "nodes": {
+    "nora-blinds": {
+     "name": "nora-blinds",
+     "types": [
+      "nora-blinds"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-nora",
+     "file": "/data/node_modules/node-red-contrib-nora/build/nodes/nora-blinds.js"
+    },
+    "nora-config": {
+     "name": "nora-config",
+     "types": [
+      "nora-config"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-nora",
+     "file": "/data/node_modules/node-red-contrib-nora/build/nodes/nora-config.js"
+    },
+    "nora-scene": {
+     "name": "nora-scene",
+     "types": [
+      "nora-scene"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-nora",
+     "file": "/data/node_modules/node-red-contrib-nora/build/nodes/nora-scene.js"
+    },
+    "nora-speaker": {
+     "name": "nora-speaker",
+     "types": [
+      "nora-speaker"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-nora",
+     "file": "/data/node_modules/node-red-contrib-nora/build/nodes/nora-speaker.js"
+    },
+    "nora-switch": {
+     "name": "nora-switch",
+     "types": [
+      "nora-switch"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-nora",
+     "file": "/data/node_modules/node-red-contrib-nora/build/nodes/nora-switch.js"
+    },
+    "nora-thermostat": {
+     "name": "nora-thermostat",
+     "types": [
+      "nora-thermostat"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-nora",
+     "file": "/data/node_modules/node-red-contrib-nora/build/nodes/nora-thermostat.js"
+    },
+    "nora-outlet": {
+     "name": "nora-outlet",
+     "types": [
+      "nora-outlet"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-nora",
+     "file": "/data/node_modules/node-red-contrib-nora/build/nodes/nora-outlet.js"
+    },
+    "nora-light": {
+     "name": "nora-light",
+     "types": [
+      "nora-light"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-nora",
+     "file": "/data/node_modules/node-red-contrib-nora/build/nodes/nora-light.js"
+    },
+    "nora-garage": {
+     "name": "nora-garage",
+     "types": [
+      "nora-garage"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-nora",
+     "file": "/data/node_modules/node-red-contrib-nora/build/nodes/nora-garage.js"
+    },
+    "nora-lock": {
+     "name": "nora-lock",
+     "types": [
+      "nora-lock"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-nora",
+     "file": "/data/node_modules/node-red-contrib-nora/build/nodes/nora-lock.js"
+    }
+   }
+  },
   "node-red-contrib-amazon-echo": {
    "name": "node-red-contrib-amazon-echo",
    "version": "0.1.10",
@@ -1004,6 +1128,23 @@
      "local": true,
      "module": "node-red-contrib-amazon-echo",
      "file": "/data/node_modules/node-red-contrib-amazon-echo/index.js"
+    }
+   }
+  },
+  "node-red-contrib-color-convert": {
+   "name": "node-red-contrib-color-convert",
+   "version": "0.0.8",
+   "local": true,
+   "nodes": {
+    "color-convert": {
+     "name": "color-convert",
+     "types": [
+      "color-convert"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-color-convert",
+     "file": "/data/node_modules/node-red-contrib-color-convert/color.js"
     }
    }
   }
@@ -1039,7 +1180,7 @@
    },
    "menu-deploymenu-item-node": true,
    "menu-deploymenu-item-full": false,
-   "menu-menu-item-sidebar": true
+   "menu-menu-item-sidebar": false
   }
  }
 }
