@@ -61,8 +61,8 @@ $query = "delete from widget where id= {$id} or id_ligado = {$id}";
 
 
 if(mysqli_query($con, $query)) {
-	$bearertoken = Get_BearerToken_FromKapellt();
-	DeleteDeviceSpecific($bearertoken, $device_id_kappelt);
+//	$bearertoken = Get_BearerToken_FromKapellt();    // Apagado o delete dispositivo
+//	DeleteDeviceSpecific($bearertoken, $device_id_kappelt);
 } else {
 echo "Impossivel Deletar!";
 }
@@ -212,8 +212,8 @@ echo "Impossivel Deletar!";
 else if($id == "d2")
 	
 {
-	$bearertoken = Get_BearerToken_FromKapellt();
-	$result = DeleteAllDevices($bearertoken);
+//	$bearertoken = Get_BearerToken_FromKapellt();  // Delete all devices
+//	$result = DeleteAllDevices($bearertoken);
 	if ($result !=0)
 	{
 	$result = SaveDates(0, 0, 0);  // Limpa todos os device_id_kappelt do banco de dados quando $result != 0

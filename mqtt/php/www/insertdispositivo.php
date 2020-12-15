@@ -653,8 +653,8 @@ if(isset($_POST['btnSalvar']))
 	{
 	$traits_statusTopic =   "confirma/" . $username_topico; 
 	}
-	$bearertoken = Get_BearerToken_FromKapellt();
-	$result = newDeviceKapellt($bearertoken, $descricao, $type_kappelt, $traits_type_kappelt, $requiresActionTopic_kappelt, $requiresStatusTopic_kappelt,  $traits_actionTopic,  $traits_statusTopic );
+//	$bearertoken = Get_BearerToken_FromKapellt();
+//	$result = newDeviceKapellt($bearertoken, $descricao, $type_kappelt, $traits_type_kappelt, $requiresActionTopic_kappelt, $requiresStatusTopic_kappelt,  $traits_actionTopic,  $traits_statusTopic );
 	$Jsonresult = json_decode($result, true);
 	$device_id_kappelt = $Jsonresult[id];
 	// ************** Fim Função Adcionado para karppelt***************************
