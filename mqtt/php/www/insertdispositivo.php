@@ -2,7 +2,7 @@
 header("Content-Type: text/html; charset=UTF-8",true);
 require_once("usuario/dados_bd.php");
 include_once("seguranca.php"); // Inclui o arquivo com o sistema de segurança
-require_once("bibliokappelt.php");
+require_once("noderedEdit.php");
 error_reporting(0);
 $con = mysqli_connect($DB_SERVER, $DB_USER, $DB_PASS, $DB_NAME);
 //mysql_select_db($DB_NAME, $con);
@@ -641,25 +641,6 @@ if(isset($_POST['btnSalvar']))
 	if ($result === FALSE) { echo "Erro"; }
 
 
-	// ************** Inicio Função Adcionado para karppelt************************
-	//*****************************************************************************
-	
-	$traits_actionTopic = substr($setPubTopic0, 7);
-	if ($requiresActionTopic_kappelt == 0)
-	{
-	$traits_statusTopic = $traits_actionTopic;
-	}
-	else
-	{
-	$traits_statusTopic =   "confirma/" . $username_topico; 
-	}
-//	$bearertoken = Get_BearerToken_FromKapellt();
-//	$result = newDeviceKapellt($bearertoken, $descricao, $type_kappelt, $traits_type_kappelt, $requiresActionTopic_kappelt, $requiresStatusTopic_kappelt,  $traits_actionTopic,  $traits_statusTopic );
-	$Jsonresult = json_decode($result, true);
-	$device_id_kappelt = $Jsonresult[id];
-	// ************** Fim Função Adcionado para karppelt***************************
-	//*****************************************************************************	
-	
 	
 	$query = "INSERT INTO `autohome`.`widget` (`id`, `id_ligado`, `Descricao`,     `username_iphone`,    `pin_iphone`,    `ordem`,   `tipo`,     `tipo_geral`,    `ambiente`,    `dispositivo_fisico`,    `proprietario`,    `setName0`, `setName1`, `setName2`, `setName3`, `setSubTopic0`, `setSubTopic1`, `setSubTopic2`, `setSubTopic3`, `setPubTopic0`,    `publishValue`,   `publishValue2`,   `label`, `label2`,   `additionalValue`,   `additionalValue2`, `additionalValue3`,     `setPrimaryColor0`, `setPrimaryColor1`, `setPrimaryColor2`, `setPrimaryColor3`, `retained`,    `decimalMode`,    `mode`,   `onShowExecute`, `onReceiveExecute`, `formatMode`,    `habilitado`,   `convidado`,   `device_id_kappelt`,   `type_kappelt`,   `traits_type_kappelt`,   `requiresActionTopic_kappelt`,   `requiresStatusTopic_kappelt`)  
 	                                    VALUES (NULL,   '0',      '{$descricao}', '{$username_iphone}', '{$pin_iphone}', '{$ordem}', '{$tipo}', '{$tipo_geral}', '{$ambiente}', '{$dispositivo_fisico}', '{$proprietario}', '{$setname0}',   '',         '',         '',    '{$setSubTopic0}',      '',             '',             '',    '{$setPubTopic0}', '{$publishValue}', '{$publishValue2}',    '',      '',    '{$additionalValue}', '{$additionalValue2}',         '',         '{$setPrimaryColor0}',         '0',               '0',               '0',        '{$retained}',       '0',        '{$mode}',        '',                 '',              '',     '{$habilitado}', '{$convidado}',  '$device_id_kappelt',  '{$type_kappelt}', '{$traits_type_kappelt}', '{$requiresActionTopic_kappelt}', '{$requiresStatusTopic_kappelt}');";
@@ -701,6 +682,8 @@ $studentData = mysqli_query($con, $query);
 	$studentData =  mysqli_query($con, $query);
 
 	}
+
+	updateFluxo();  //Atualiza o Fluxo NodeRed
 		
 
 	$query = "SELECT pin, chavedispositivo, usu_bb, se_bb FROM `servidor` where 1=1";

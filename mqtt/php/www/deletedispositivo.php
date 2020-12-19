@@ -1,6 +1,7 @@
 <?php
 require_once("usuario/dados_bd.php");
-require_once("bibliokappelt.php");
+//require_once("bibliokappelt.php");
+require_once("noderedEdit.php");
 $con = mysqli_connect($DB_SERVER, $DB_USER, $DB_PASS, $DB_NAME);
 $msg = "";
 $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : "0";
@@ -103,6 +104,7 @@ $query = "delete from rx433mhz_portas where id_widget= {$id}";
 
 
 if(mysqli_query($con, $query)) {
+	updateFluxo();  //Atualiza o Fluxo NodeRed
 header("location:main.php");
 } else {
 echo "Impossivel Deletar!";
@@ -167,6 +169,7 @@ $query = "delete from rx433mhz_persiana where 1=1";
 
 
 if(mysqli_query($con, $query)) {
+	updateFluxo();  //Atualiza o Fluxo NodeRed
 header("location:main.php");
 } else {
 echo "Impossivel Deletar!";
@@ -188,6 +191,7 @@ echo "Impossivel Deletar!";
 
 
 if(mysqli_query($con, $query)) {
+	updateFluxo();  //Atualiza o Fluxo NodeRed
 header("location:main.php");
 } else {
 echo "Impossivel Deletar!";
@@ -201,6 +205,7 @@ $query = "DELETE FROM `autohome`.`ifttt` WHERE 1=1";
 
 
 if(mysqli_query($con, $query)) {
+	updateFluxo();  //Atualiza o Fluxo NodeRed
 header("location:main.php");
 } else {
 echo "Impossivel Deletar!";
@@ -212,13 +217,7 @@ echo "Impossivel Deletar!";
 else if($id == "d2")
 	
 {
-//	$bearertoken = Get_BearerToken_FromKapellt();  // Delete all devices
-//	$result = DeleteAllDevices($bearertoken);
-	if ($result !=0)
-	{
-	$result = SaveDates(0, 0, 0);  // Limpa todos os device_id_kappelt do banco de dados quando $result != 0
-	}
-	//echo $result;
+	updateFluxo();  //Atualiza o Fluxo NodeRed
 	header("location:main.php");
 }
 
