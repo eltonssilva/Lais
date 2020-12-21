@@ -2,6 +2,28 @@
 require_once("usuario/dados_bd.php");
 error_reporting(0);
 
+
+function Get_Token()
+{
+
+		global $DB_SERVER;
+		global $DB_USER;
+		global $DB_PASS;
+		global $DB_NAME;
+		
+		
+		$cnx = mysqli_connect($DB_SERVER, $DB_USER, $DB_PASS, $DB_NAME);
+		
+		$query = "SELECT bearertoken FROM `servidor`";
+		
+		mysqli_set_charset($cnx, 'utf8');
+		$data = mysqli_query($cnx, $query);
+		mysqli_close($cnx);
+
+		return $data;
+}
+
+
 function Get_Devices()
 {
 
@@ -587,16 +609,23 @@ function updateFluxo(){
         
     }
 
+    $bearertoken = Get_Token();
+    while($rec = mysqli_fetch_array($bearertoken)) 
+		{
+      $tokenNora = $rec['bearertoken'];
+    }
+
     $nodeNoraConfig = array(
       'id' => 'd3c8442d.b94d08',
-      'type' => 'nora-config"',
+      'type' => 'nora-config',
       'z' => '',
+      'credentials' => array ('token' =>$tokenNora),
       'name' => 'AutoDomoToken',
       'group' => '',
       'notify' => false,
     );
 
-   // array_push($ArrayNodes, $nodeNoraConfig);
+    array_push($ArrayNodes, $nodeNoraConfig);
 
    $TratarGoogleHome = array(
     'id' => '885ddb14.2547f8', 
