@@ -1,6 +1,7 @@
 <?php
 require_once("usuario/dados_bd.php");
 include("segurancaconfig.php"); // Inclui o arquivo com o sistema de segurança
+require_once("noderedEdit.php");
 protegePagina(); // Chama a função que protege a página
 $con2 = mysqli_connect($DB_SERVER, $DB_USER, $DB_PASS, $DB_NAME);
 $msg = "";
@@ -33,6 +34,7 @@ if(isset($_POST['btn']))
 		$senha_user_gh = $_POST['senha_user_gh'];
 		$apikey_gh = $_POST['apikey_gh'];
 		$apikey_id = $_POST['apikey_id'];
+		$nora = $_POST['nora'];
 		
 
 		
@@ -46,13 +48,13 @@ if(isset($_POST['btn']))
 		
 		if (trim($senha) == "")
 		{
-		$query = "update `servidor` set nome = '{$nome}', pin = '{$pin}', ip = '{$ip}', usuario = '{$usuario}', usu_bb='{$usu_bb}', se_bb='{$se_bb}', email='{$email}',  chavedispositivo='{$chavedispositivo}', user_gbridge='{$user_gbridge}', firmware='{$firmware}' , usermqtt_gh='{$usermqtt_gh}' , senhamqtt_gh='{$senhamqtt_gh}' , userid_gh='{$userid_gh}' , senha_user_gh='{$senha_user_gh}' , apikey_gh='{$apikey_gh}' , apikey_id='{$apikey_id}' where id = '1'";
+		$query = "update `servidor` set nome = '{$nome}', pin = '{$pin}', ip = '{$ip}', usuario = '{$usuario}', usu_bb='{$usu_bb}', se_bb='{$se_bb}', email='{$email}',  chavedispositivo='{$chavedispositivo}', user_gbridge='{$user_gbridge}', firmware='{$firmware}' , usermqtt_gh='{$usermqtt_gh}' , senhamqtt_gh='{$senhamqtt_gh}' , userid_gh='{$userid_gh}' , bearertoken='{$nora}' ,senha_user_gh='{$senha_user_gh}' , apikey_gh='{$apikey_gh}' , apikey_id='{$apikey_id}' where id = '1'";
 		echo "Não Houve Modificação na Senha de Usuario";
 		}
 		else 
 		{
 		$query = "update `servidor` set nome = '{$nome}', pin = '{$pin}', ip = '{$ip}', usuario = '{$usuario}', senha = '".  md5($senha) ."',
-		 usu_bb='{$usu_bb}', se_bb='{$se_bb}', email='{$email}',  chavedispositivo='{$chavedispositivo}', user_gbridge='{$user_gbridge}', firmware='{$firmware}' , usermqtt_gh='{$usermqtt_gh}' , senhamqtt_gh='{$senhamqtt_gh}' , userid_gh='{$userid_gh}' , senha_user_gh='{$senha_user_gh}' , apikey_gh='{$apikey_gh}' , apikey_id='{$apikey_id}' where id = '1'";
+		 usu_bb='{$usu_bb}', se_bb='{$se_bb}', email='{$email}',  chavedispositivo='{$chavedispositivo}', user_gbridge='{$user_gbridge}', firmware='{$firmware}' , usermqtt_gh='{$usermqtt_gh}' , senhamqtt_gh='{$senhamqtt_gh}' , userid_gh='{$userid_gh}' , bearertoken='{$nora}' , senha_user_gh='{$senha_user_gh}' , apikey_gh='{$apikey_gh}' , apikey_id='{$apikey_id}' where id = '1'";
 		}
 
 		// Criar o Arquivo do
@@ -109,6 +111,7 @@ if(isset($_POST['btn']))
 				$msg = "Erro na Atualização";
 				}
 	mysqli_close($con);
+	updateFluxo();  //Atualiza o Fluxo NodeRed
 	}
 
 $query = "SELECT * FROM `servidor` where id =1";
@@ -167,20 +170,24 @@ mysqli_close($con2);
 <input type='text' class='w3-input w3-border' value="<?php echo $recStudent['email']; ?>" name="email"/> <br/>
 <label class="w3-label w3-text-blue"><b>Chave Dispositivo</b></label>
 <input type='text' class='w3-input w3-border' value="<?php echo $recStudent['chavedispositivo']; ?>" name="chavedispositivo"/> <br/>
-<label class="w3-label w3-text-blue"><b>UserMqtt Gbridge</b></label>
+<!-- <label class="w3-label w3-text-blue"><b>UserMqtt Gbridge</b></label>
 <input type='text' class='w3-input w3-border' value="<?php echo $recStudent['usermqtt_gh']; ?>" name="usermqtt_gh"/> <br/>
 <label class="w3-label w3-text-blue"><b>Chave Gbridge</b></label>
 <input type='text' class='w3-input w3-border' value="<?php echo $recStudent['user_gbridge']; ?>" name="user_gbridge"/> <br/>
 <label class="w3-label w3-text-blue"><b>Senha MQTT Gbridge </b></label>
 <input type='text' class='w3-input w3-border' value="<?php echo $recStudent['senhamqtt_gh']; ?>" name="senhamqtt_gh"/> <br/>
 <label class="w3-label w3-text-blue"><b>User ID Gbridge <?php echo "- (Usuario: " . strtoupper ($recStudent['pin']) . " )"; ?> </b></label>
-<input type='text' class='w3-input w3-border' value="<?php echo $recStudent['userid_gh']; ?>" name="userid_gh"/> <br/>
-<label class="w3-label w3-text-blue"><b>Senha Usuario Gbridge <?php echo "- (Usuario: " . strtoupper ($recStudent['pin']) . " )"; ?> </b></label>
+<input type='text' class='w3-input w3-border' value="<?php echo $recStudent['userid_gh']; ?>" name="userid_gh"/> <br/> -->
+<!-- <label class="w3-label w3-text-blue"><b>Senha Usuario Gbridge <?php echo "- (Usuario: " . strtoupper ($recStudent['pin']) . " )"; ?> </b></label>
 <input type='text' class='w3-input w3-border' value="<?php echo $recStudent['senha_user_gh']; ?>" name="senha_user_gh"/> <br/>
 <label class="w3-label w3-text-blue"><b>ApiKey Gbridge</b></label>
 <input type='text' class='w3-input w3-border' value="<?php echo $recStudent['apikey_gh']; ?>" name="apikey_gh"/> <br/>
-<label class="w3-label w3-text-blue"><b>ID ApiKey Gbridge</b></label>
-<input type='text' class='w3-input w3-border' value="<?php echo $recStudent['apikey_id']; ?>" name="apikey_id"/> <br/>
+<label class="w3-label w3-text-blue"><b>ID ApiKey Gbridge</b></label> -->
+<!-- <input type='text' class='w3-input w3-border' value="<?php echo $recStudent['apikey_id']; ?>" name="apikey_id"/> <br/> -->
+
+<label class="w3-label w3-text-blue"><b>Token Google Home (Nora)</b></label>
+<input type='text' class='w3-input w3-border' value="<?php echo $recStudent['bearertoken']; ?>" name="nora"/> <br/>
+
 <label class="w3-label w3-text-blue"><b>Firmware</b></label>
 <input type='text' class='w3-input w3-border' value="<?php echo $recStudent['firmware']; ?>" name="firmware"/> <br/>
 <input type="submit" class= "w3-btn w3-blue" id='btn' name='btn' value='Salva' /><br><p>
@@ -191,7 +198,7 @@ mysqli_close($con2);
 <a href="javascript: void(0);" onclick="window.open('system_restart.php', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=150');"><img src="/png/64/system_restart.png">Redefinir Sistema</a>
 <a href="javascript: void(0);" onclick="window.open('/config/configdispositivo.php');"><img src="/png/64/configdevice.png">Configurar Dispositivos</a>
 <!-- <a href="javascript: void(0);" onclick="window.open('/config/reboot.php');"><img src="/png/64/reboot.png">Reiniciar Sistema</a> -->
-<a href="javascript: void(0);" onclick="window.open('/config/googlehomesicroniza.php');"><img src="/png/64/googlehome.png">Sincroniza Google Home</a>
+<!-- <a href="javascript: void(0);" onclick="window.open('/config/googlehomesicroniza.php');"><img src="/png/64/googlehome.png">Sincroniza Google Home</a> -->
 <a href="javascript: void(0);" onclick="window.open('/config/baixaconfiguracao.php', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=600');"><img src="/png/64/data-configuration.png">Adicionar Dispositivo</a>
 </body>
 </html>
