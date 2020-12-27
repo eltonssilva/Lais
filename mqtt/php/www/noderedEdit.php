@@ -228,6 +228,8 @@ function updateFluxo(){
 
       if (($_tipo_geral == "14") || ($_tipo_geral == "15"))
     {
+     // $_type = "nora-light";  //nora-switch
+      $_type = "nora-switch";  //nora-switch
       $_y = $_y + 50;
       $_id = $rec['id'];
       $_setPubTopic0 = $rec['setPubTopic0'];
@@ -241,11 +243,18 @@ function updateFluxo(){
       $_idCompleto = strtolower($_primeiraparteId . "." . $_segundaparteId);
       $modelTratarTopico = array(
         'id' => $_idCompleto, 
-        'type' => 'nora-switch', 
+        'type' => $_type, 
         'z' => '1a12526.c8edbae',
         "devicename" => $_Descricao,
         "roomhint" => $_nomeambiente,
         'name' => $_Descricao,
+
+        "lightcolor" => false,
+        "brightnesscontrol" => false,
+        "turnonwhenbrightnesschanges" => false,
+        "statepayload"=> true,
+        "brightnessoverride" => "",
+        
         'passthru' => false,
         "nora" => "d3c8442d.b94d08",
         "topic" => $_setPubTopic0,
@@ -281,14 +290,16 @@ function updateFluxo(){
         'type' => 'nora-light', 
         'z' => '1a12526.c8edbae',
         "devicename" => $_Descricao,
+
         "lightcolor" => false,
         "brightnesscontrol" => false,
         "turnonwhenbrightnesschanges" => false,
-        "roomhint" => $_nomeambiente,
-        'name' => $_Descricao,
-        'passthru' => false,
         "statepayload"=> true,
         "brightnessoverride" => "",
+
+        "roomhint" => $_nomeambiente,
+        'name' => $_Descricao,
+        'passthru' => false,  
         "nora" => "d3c8442d.b94d08",
         "topic" => $_setPubTopic0,
         "onvalue" => "1",
