@@ -779,7 +779,7 @@ elseif ($valor == "Off")
 <th><img id="bulb<?php echo $rec['id']; ?>" src= <?php echo "'" . $bulb . "'"; ?> alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone']; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
  <th> 
   
@@ -816,7 +816,7 @@ elseif ($valor == "Off")
 <th><img src="/png/64/drop.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
 <th  class="<?php echo $rec['id']; ?>" ><?php echo $valor; ?>%</th>
 </th>
@@ -838,7 +838,7 @@ elseif ($valor == "Off")
 <th><img src="/png/64/temperature.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
 <th  class="<?php echo $rec['id']; ?>" > <?php echo $valor; ?> <sup>o</sup>C </th>
 </th>
@@ -859,7 +859,7 @@ elseif ($valor == "Off")
 <th><img src="/png/64/lux.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
 <th  class="<?php echo $rec['id']; ?>" ><?php echo $valor; ?> lux</th>
 </th>
@@ -891,7 +891,7 @@ if($valor == 'p0')
 <th><img src="/png/64/rgb.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
  <th>
  <div class="onoffswitch">
@@ -924,7 +924,7 @@ if($valor == 'p0')
 <th><img src="/png/64/houseplant.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
 <th  class="<?php echo $rec['id']; ?>"  ><?php echo $valor; ?> %</th>
 </th>
@@ -946,7 +946,7 @@ if($valor == 'p0')
 <th><img src="/png/64/atmospheric_pressure.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
 <th  class="<?php echo $rec['id']; ?>" ><?php echo $valor; ?>Pa</th>
 </th>
@@ -967,7 +967,7 @@ if($valor == 'p0')
 <th><img src="/png/64/altitude.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
 <th class="<?php echo $rec['id']; ?>"><?php echo $valor; ?>m</th>
 </th>
@@ -1000,7 +1000,7 @@ if($valor == '0')
 <th><img src="/png/64/persiana.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
 <th> 
 
@@ -1044,7 +1044,7 @@ if($valor == 1)
 <th><img src="/png/64/airconditioningindoor.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
  <th> 
   
@@ -1093,7 +1093,7 @@ if($valor == 1)
 <th><img src="/png/64/tv.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
  <th> 
   
@@ -1140,7 +1140,7 @@ if($valor == 1)
 <th><img src="/png/64/som.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
  <th> 
   
@@ -1190,7 +1190,7 @@ if($valor == 1)
 <th><img src="/png/64/power_on.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
  <th> 
   
@@ -1232,7 +1232,7 @@ if($valor == 1)
 <th><img src="/png/64/motion.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
 <th class="<?php echo $rec['id']; ?>"><?php if ($valor == '1') {echo 'Acionado';} else {echo 'Não Acionado';} ?></th>
 </th>
@@ -1268,7 +1268,7 @@ elseif ($valor == "Off")
 <th><img src="/png/64/power button.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
  <th> 
   
@@ -1316,7 +1316,7 @@ elseif ($valor == "Off")
 <th><img id="bulb<?php echo $rec['id']; ?>" src= <?php echo "'" . $bulb . "'"; ?> alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
  <th> 
   
@@ -1360,7 +1360,7 @@ elseif ($valor == "Off")
 <th><img id="bulb<?php echo $rec['id']; ?>" src= <?php echo "'" . $door . "'"; ?> alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
  <th> 
   
@@ -1395,7 +1395,7 @@ elseif ($valor == "Off")
 <th><img src="/png/64/air-quality.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
 <th  class="<?php echo $rec['id']; ?>" ><?php echo $valor; ?>mg/m3</th>
 </th>
@@ -1430,7 +1430,7 @@ if($valor == '0')
 <th><img src="/png/64/garage.png" alt="Smiley face" height="64" width="64" onclick="return pubmqttportao( '<?php echo $rec['setPubTopic0']; ?>', '<?php echo "myRange" . $rec['id']; ?>', '1','<?php echo $rec['id']; ?>')"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
 <th> 
 
@@ -1476,7 +1476,7 @@ else
 <th><img id="bulb<?php echo $rec['id']; ?>" src= <?php echo "'" . $bulb . "'"; ?> alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone']; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
  <th> 
   
@@ -1529,7 +1529,7 @@ if($valor == 1)
 <th><img src="/png/64/socket_f.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
  <th> 
   
@@ -1583,7 +1583,7 @@ if($valor == 1)
 <th><img src="/png/64/cena.png" alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
  <th> 
   
@@ -1633,7 +1633,7 @@ elseif ($valor == "Off")
 <th><img id="bulb<?php echo $rec['id']; ?>" src= <?php echo "'" . $bulb . "'"; ?> alt="Smiley face" height="64" width="64"></th> 
 <th><?php echo $rec['Descricao']; ?></th>
 <th><?php echo "SN: " . $rec['username_iphone']; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
-<th>   <a href="javascript: void(0);" onclick="window.open('sincronizargooglehome.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
 <th><?php echo $desc_ambiente; ?></th>
  <th> 
   

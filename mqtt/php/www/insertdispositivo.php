@@ -37,6 +37,12 @@ if(isset($_POST['btnSalvar']))
 	$requiresStatusTopic_kappelt= $_POST['requiresStatusTopic_kappelt'];
 	$pin_iphone = rand (100, 999) . "-" . rand (10, 99) . "-" . rand (100, 999);
 
+	if(($id_ == '1') || ($id_ == '14')  || ($id_ == '15') || ($id_ == '22') ){ 
+
+	$type_kappelt =  $_POST['typekappeltModificado'];
+
+	}
+
 	
 	if($id_ == '01') //Para Lampadas
 	{		
@@ -800,6 +806,16 @@ $studentData =  mysqli_query($con, $query);
                      } 
                      ?>
           </select>
+
+<?php if(($codigo_ == '1') || ($codigo_ == '14')  || ($codigo_ == '15') || ($codigo_ == '22') ){ ?>
+<label class="w3-label w3-text-blue"><b>Tipo Dispositivo</b></label>
+<select name="typekappeltModificado" id="typekappeltModificado" class="w3-input w3-border" >
+  <option value="Light">Luz (Lâmpada)</option>
+  <option value="Outlet">Chave</option>
+</select> 
+
+<?php } ?>
+
 <label class="w3-label w3-text-blue"><b>Descrição</b></label>
 <input type="text" class="w3-input w3-border" value="" name="descricao" maxlength=17/> <br/>
 <input type="text" class="w3-input w3-border" value="<?php echo $type_kappelt; ?>" name="type_kappelt" maxlength=30 style="display:none;"/> <br/>

@@ -228,11 +228,10 @@ function updateFluxo(){
 
       if (($_tipo_geral == "14") || ($_tipo_geral == "15"))
     {
-     // $_type = "nora-light";  //nora-switch
-      $_type = "nora-switch";  //nora-switch
       $_y = $_y + 50;
       $_id = $rec['id'];
       $_setPubTopic0 = $rec['setPubTopic0'];
+      $type_kappelt = $rec['type_kappelt'];
       $_username_iphone = str_replace(":", "", $rec['username_iphone']);
       $_pin_iphone = str_replace("-", "", $rec['pin_iphone']);
       $_Descricao= str_replace("-", "", $rec['Descricao']);
@@ -241,6 +240,14 @@ function updateFluxo(){
       $_primeiraparteId = substr($_username_iphone, 4);
       $_segundaparteId = substr($_pin_iphone, 3) . 'a';
       $_idCompleto = strtolower($_primeiraparteId . "." . $_segundaparteId);
+
+       if ($type_kappelt == "Outlet"){
+        $_type = "nora-switch";  //nora-switch
+        }else{
+        $_type = "nora-light";  //nora-switch
+        }
+           
+
       $modelTratarTopico = array(
         'id' => $_idCompleto, 
         'type' => $_type, 
@@ -277,6 +284,7 @@ function updateFluxo(){
       $_y = $_y + 50;
       $_id = $rec['id'];
       $_setPubTopic0 = $rec['setPubTopic0'];
+      $type_kappelt = $rec['type_kappelt'];
       $_username_iphone = str_replace(":", "", $rec['username_iphone']);
       $_pin_iphone = str_replace("-", "", $rec['pin_iphone']);
       $_Descricao= str_replace("-", "", $rec['Descricao']);
@@ -285,9 +293,16 @@ function updateFluxo(){
       $_primeiraparteId = substr($_username_iphone, 4);
       $_segundaparteId = substr($_pin_iphone, 3) . 'a';
       $_idCompleto = strtolower($_primeiraparteId . "." . $_segundaparteId);
+
+      if ($type_kappelt == "Outlet"){
+        $_type = "nora-switch";  //nora-switch
+        }else{
+        $_type = "nora-light";  //nora-switch
+        }
+
       $modelTratarTopico = array(
         'id' => $_idCompleto, 
-        'type' => 'nora-light', 
+        'type' => $_type, 
         'z' => '1a12526.c8edbae',
         "devicename" => $_Descricao,
 
