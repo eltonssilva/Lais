@@ -17,10 +17,22 @@ $pin = $rec['pin'];
 }
 
 
+function selectDadosWidget($id){
+	global $DB_SERVER;
+	global $DB_USER;
+	global $DB_PASS;
+	global $DB_NAME;
+	$cnx = mysqli_connect($DB_SERVER, $DB_USER, $DB_PASS, $DB_NAME);
 
-$query = "SELECT widget.id, widget.Descricao, widget.username_iphone, widget.tipo_geral,  widget.setSubTopic0, widget.type_kappelt, widget.traits_type_kappelt, widget.requiresActionTopic_kappelt, widget.requiresStatusTopic_kappelt, widget.device_id_kappelt, ambiente.Descricao ambiente FROM widget, ambiente WHERE widget.id = {$id}  and ambiente.id = widget.ambiente;";
+	$query = "SELECT widget.id, widget.Descricao, widget.username_iphone, widget.tipo_geral,  widget.setSubTopic0, widget.type_kappelt, widget.traits_type_kappelt, widget.requiresActionTopic_kappelt, widget.requiresStatusTopic_kappelt, widget.device_id_kappelt, ambiente.Descricao ambiente, ambiente.id ambienteId FROM widget, ambiente WHERE widget.id = {$id}  and ambiente.id = widget.ambiente;";
+	mysqli_set_charset($cnx, 'utf8');
+	$data = mysqli_query($cnx, $query);
+	mysqli_close($cnx);
+	return $data;
 
-$studentData = mysqli_query($con, $query);
+}
+
+$studentData = selectDadosWidget($id);
 while($rec = mysqli_fetch_array($studentData)) { 
 $Descricao = $rec['Descricao'];
 $username_iphone = $rec['username_iphone'];
@@ -32,9 +44,14 @@ $device_id_kappelt = trim($rec['device_id_kappelt']);
 $traits_type_kappelt = trim($rec['traits_type_kappelt']);
 $requiresActionTopic_kappelt = trim($rec['requiresActionTopic_kappelt']);
 $requiresStatusTopic_kappelt = trim($rec['requiresStatusTopic_kappelt']);
+$ambienteId = trim($rec['ambiente.id']);
 
 
 }
+
+$query = "SELECT * FROM `ambiente`";
+mysqli_set_charset($con, 'utf8');
+$ambieteData =  mysqli_query($con, $query);
 
 mysqli_close($con);
 
@@ -46,10 +63,10 @@ function updateWidget($_Descricao, $_Ambiente, $_tipoDevice, $typekappeltModific
 		global $DB_NAME;
 		$cnx = mysqli_connect($DB_SERVER, $DB_USER, $DB_PASS, $DB_NAME);
 
-		$query = "update `widget` set Descricao = '{$_Descricao}' where id = '{$_Id}'";
+		$query = "update `widget` set Descricao = '{$_Descricao}', ambiente = '{$_Ambiente}' where id = '{$_Id}'";
 
 		if(($_tipoDevice == '1') || ($_tipoDevice== '14')  || ($_tipoDevice == '15') || ($_tipoDevice == '22') ){
-			$query = "update `widget` set Descricao = '{$_Descricao}', type_kappelt = '{$typekappeltModificado}' where id = '{$_Id}'";
+			$query = "update `widget` set Descricao = '{$_Descricao}', ambiente = '{$_Ambiente}', type_kappelt = '{$typekappeltModificado}' where id = '{$_Id}'";
 		}
 		
 		mysqli_set_charset($cnx, 'utf8');
@@ -75,11 +92,12 @@ if(isset($_POST['btnSubmit']))
 
 ?>
 
-<html>
+<html dir="ltr" lang="pt-BR" style="">
 <head>
 <link href="/css/main.css" rel="stylesheet" type="text/css"/> 
 <link href="/css/w3.css" rel="stylesheet" type="text/css"/>
 </head>
+<meta charset="UTF-8">
 <body>
 <script src="js/jquery.min.js"></script>
 <script type="text/javascript">
@@ -88,6 +106,9 @@ if(isset($_POST['btnSubmit']))
             window.opener.location.reload(true);
             window.close();
         });
+
+
+
     });
     
 
@@ -100,6 +121,16 @@ if(isset($_POST['btnSubmit']))
 <br>
 <!-- <label class="w3-label w3-text-blue"><b>Ambiente</b></label>
 <input type="text" class="w3-input w3-border" value="<?php echo $ambiente; ?>" name="ambiente" maxlength=16/> -->
+
+<label class="w3-label w3-text-blue"><b>Ambiente</b></label>
+        <select class="w3-input w3-border" name="ambiente">
+                    <?php 
+                    while($rec = mysqli_fetch_array($ambieteData)) { 
+                         echo "<option value=" . $rec['id'];  if ($ambiente == $rec['Descricao']){echo " selected='selected'";} echo ">" . $rec['Descricao'] . "</option>";  
+                     } 
+                     ?>
+          </select>
+
 
 <br>
 <?php if(($tipogeral == '1') || ($tipogeral == '14')  || ($tipogeral == '15') || ($tipogeral == '22') ){ ?>
