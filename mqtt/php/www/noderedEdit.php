@@ -716,6 +716,7 @@ function updateFluxo(){
 
   $data = json_encode($arrayGeral);
 
+  //echo $data;
 
   $endereco = $_SERVER[HTTP_HOST];
 

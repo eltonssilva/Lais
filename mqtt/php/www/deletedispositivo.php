@@ -2,6 +2,7 @@
 require_once("usuario/dados_bd.php");
 //require_once("bibliokappelt.php");
 require_once("noderedEdit.php");
+require_once("noderedEditCameras.php");
 $con = mysqli_connect($DB_SERVER, $DB_USER, $DB_PASS, $DB_NAME);
 $msg = "";
 $id = isset($_REQUEST['id']) ? $_REQUEST['id'] : "0";
@@ -105,6 +106,7 @@ $query = "delete from rx433mhz_portas where id_widget= {$id}";
 
 if(mysqli_query($con, $query)) {
 	updateFluxo();  //Atualiza o Fluxo NodeRed
+	updateFluxoCameras();  //Atualiza o Fluxo NodeRed das Cameras Hikv
 header("location:main.php");
 } else {
 echo "Impossivel Deletar!";
@@ -170,6 +172,7 @@ $query = "delete from rx433mhz_persiana where 1=1";
 
 if(mysqli_query($con, $query)) {
 	updateFluxo();  //Atualiza o Fluxo NodeRed
+	updateFluxoCameras();  //Atualiza o Fluxo NodeRed das Cameras Hikv
 header("location:main.php");
 } else {
 echo "Impossivel Deletar!";
@@ -192,6 +195,7 @@ echo "Impossivel Deletar!";
 
 if(mysqli_query($con, $query)) {
 	updateFluxo();  //Atualiza o Fluxo NodeRed
+	updateFluxoCameras();  //Atualiza o Fluxo NodeRed das Cameras Hikv
 header("location:main.php");
 } else {
 echo "Impossivel Deletar!";
@@ -206,6 +210,7 @@ $query = "DELETE FROM `autohome`.`ifttt` WHERE 1=1";
 
 if(mysqli_query($con, $query)) {
 	updateFluxo();  //Atualiza o Fluxo NodeRed
+	updateFluxoCameras();  //Atualiza o Fluxo NodeRed das Cameras Hikv
 header("location:main.php");
 } else {
 echo "Impossivel Deletar!";
@@ -218,6 +223,7 @@ else if($id == "d2")
 	
 {
 	updateFluxo();  //Atualiza o Fluxo NodeRed
+	updateFluxoCameras();  //Atualiza o Fluxo NodeRed das Cameras Hikv
 	header("location:main.php");
 }
 

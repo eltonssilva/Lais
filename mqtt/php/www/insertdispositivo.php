@@ -3,6 +3,7 @@ header("Content-Type: text/html; charset=UTF-8",true);
 require_once("usuario/dados_bd.php");
 include_once("seguranca.php"); // Inclui o arquivo com o sistema de segurança
 require_once("noderedEdit.php");
+require_once("noderedEditCameras.php");
 error_reporting(0);
 $con = mysqli_connect($DB_SERVER, $DB_USER, $DB_PASS, $DB_NAME);
 //mysql_select_db($DB_NAME, $con);
@@ -34,7 +35,11 @@ if(isset($_POST['btnSalvar']))
 	$type_kappelt= $_POST['type_kappelt'];
 	$traits_type_kappelt= $_POST['traits_type_kappelt'];
 	$requiresActionTopic_kappelt= $_POST['requiresActionTopic_kappelt'];
-	$requiresStatusTopic_kappelt= $_POST['requiresStatusTopic_kappelt'];
+
+
+
+
+
 	$pin_iphone = rand (100, 999) . "-" . rand (10, 99) . "-" . rand (100, 999);
 
 	if(($id_ == '1') || ($id_ == '14')  || ($id_ == '15') || ($id_ == '22') ){ 
@@ -42,6 +47,15 @@ if(isset($_POST['btnSalvar']))
 	$type_kappelt =  $_POST['typekappeltModificado'];
 
 	}
+
+	if($id_ == '13'){ 
+
+		$type_kappelt =  $_POST['tipocameraSelect'];
+		$traits_type_kappelt= $_POST['ipcamera'];
+		$label= $_POST['usuariocamera'];
+		$label2= $_POST['senhacamera'];
+	
+		}
 
 	
 	if($id_ == '01') //Para Lampadas
@@ -649,7 +663,7 @@ if(isset($_POST['btnSalvar']))
 
 	
 	$query = "INSERT INTO `autohome`.`widget` (`id`, `id_ligado`, `Descricao`,     `username_iphone`,    `pin_iphone`,    `ordem`,   `tipo`,     `tipo_geral`,    `ambiente`,    `dispositivo_fisico`,    `proprietario`,    `setName0`, `setName1`, `setName2`, `setName3`, `setSubTopic0`, `setSubTopic1`, `setSubTopic2`, `setSubTopic3`, `setPubTopic0`,    `publishValue`,   `publishValue2`,   `label`, `label2`,   `additionalValue`,   `additionalValue2`, `additionalValue3`,     `setPrimaryColor0`, `setPrimaryColor1`, `setPrimaryColor2`, `setPrimaryColor3`, `retained`,    `decimalMode`,    `mode`,   `onShowExecute`, `onReceiveExecute`, `formatMode`,    `habilitado`,   `convidado`,   `device_id_kappelt`,   `type_kappelt`,   `traits_type_kappelt`,   `requiresActionTopic_kappelt`,   `requiresStatusTopic_kappelt`)  
-	                                    VALUES (NULL,   '0',      '{$descricao}', '{$username_iphone}', '{$pin_iphone}', '{$ordem}', '{$tipo}', '{$tipo_geral}', '{$ambiente}', '{$dispositivo_fisico}', '{$proprietario}', '{$setname0}',   '',         '',         '',    '{$setSubTopic0}',      '',             '',             '',    '{$setPubTopic0}', '{$publishValue}', '{$publishValue2}',    '',      '',    '{$additionalValue}', '{$additionalValue2}',         '',         '{$setPrimaryColor0}',         '0',               '0',               '0',        '{$retained}',       '0',        '{$mode}',        '',                 '',              '',     '{$habilitado}', '{$convidado}',  '$device_id_kappelt',  '{$type_kappelt}', '{$traits_type_kappelt}', '{$requiresActionTopic_kappelt}', '{$requiresStatusTopic_kappelt}');";
+	                                    VALUES (NULL,   '0',      '{$descricao}', '{$username_iphone}', '{$pin_iphone}', '{$ordem}', '{$tipo}', '{$tipo_geral}', '{$ambiente}', '{$dispositivo_fisico}', '{$proprietario}', '{$setname0}',   '',         '',         '',    '{$setSubTopic0}',      '',             '',             '',    '{$setPubTopic0}', '{$publishValue}', '{$publishValue2}',    '{$label}',      '{$label2}',   '{$additionalValue}', '{$additionalValue2}',         '',         '{$setPrimaryColor0}',         '0',               '0',               '0',        '{$retained}',       '0',        '{$mode}',        '',                 '',              '',     '{$habilitado}', '{$convidado}',  '$device_id_kappelt',  '{$type_kappelt}', '{$traits_type_kappelt}', '{$requiresActionTopic_kappelt}', '{$requiresStatusTopic_kappelt}');";
 //echo $query;
 
 mysqli_set_charset($con, 'utf8');
@@ -683,13 +697,14 @@ $studentData = mysqli_query($con, $query);
 	
 	
 	$query = "INSERT INTO `autohome`.`widget` (`id`, `id_ligado`, `Descricao`,     `username_iphone`,    `pin_iphone`,    `ordem`,   `tipo`,     `tipo_geral`,    `ambiente`,    `dispositivo_fisico`,    `proprietario`,    `setName0`, `setName1`, `setName2`, `setName3`, `setSubTopic0`, `setSubTopic1`, `setSubTopic2`, `setSubTopic3`, `setPubTopic0`,    `publishValue`,   `publishValue2`,   `label`, `label2`,   `additionalValue`,   `additionalValue2`, `additionalValue3`,     `setPrimaryColor0`, `setPrimaryColor1`, `setPrimaryColor2`, `setPrimaryColor3`, `retained`,    `decimalMode`,    `mode`,   `onShowExecute`, `onReceiveExecute`, `formatMode`,    `habilitado`,   `convidado`,   `device_id_kappelt`,   `type_kappelt`,   `traits_type_kappelt`,   `requiresActionTopic_kappelt`,   `requiresStatusTopic_kappelt`) 
-	                                    VALUES (NULL,   '{$id_ligado}',      'Status-{$descricao}', '',       '',       '{$ordem}', '{$tipo}', '{$tipo_geral}', '{$ambiente}', '{$dispositivo_fisico}', '{$proprietario}', 'Status-{$setname0}',   '',         '',         '',    '{$setSubTopic0}',      '',             '',             '',    '', '{$publishValue}', '{$publishValue2}',    '',      '',    '{$additionalValue}', '{$additionalValue2}',         '',         '{$setPrimaryColor0}',         '0',               '0',               '0',        '{$retained}',       '0',        '{$mode}',        '',                 '',              '',     '{$habilitado}',       '{$convidado}',  '{$device_id_kappelt}',  '{$type_kappelt}', '{$traits_type_kappelt}', '{$requiresActionTopic_kappelt}', '{$requiresStatusTopic_kappelt}');";
+	                                    VALUES (NULL,   '{$id_ligado}',      'Status-{$descricao}', '',       '',       '{$ordem}', '{$tipo}', '{$tipo_geral}', '{$ambiente}', '{$dispositivo_fisico}', '{$proprietario}', 'Status-{$setname0}',   '',         '',         '',    '{$setSubTopic0}',      '',             '',             '',    '', '{$publishValue}', '{$publishValue2}',    '{$label}',      '{$label2}',    '{$additionalValue}', '{$additionalValue2}',         '',         '{$setPrimaryColor0}',         '0',               '0',               '0',        '{$retained}',       '0',        '{$mode}',        '',                 '',              '',     '{$habilitado}',       '{$convidado}',  '{$device_id_kappelt}',  '{$type_kappelt}', '{$traits_type_kappelt}', '{$requiresActionTopic_kappelt}', '{$requiresStatusTopic_kappelt}');";
 	mysqli_set_charset('utf8');
 	$studentData =  mysqli_query($con, $query);
 
 	}
 
 	updateFluxo();  //Atualiza o Fluxo NodeRed
+	updateFluxoCameras();  //Atualiza o Fluxo NodeRed das Cameras Hikvision
 		
 
 	$query = "SELECT pin, chavedispositivo, usu_bb, se_bb FROM `servidor` where 1=1";
@@ -773,6 +788,31 @@ $studentData =  mysqli_query($con, $query);
             window.opener.location.reload(true);
             window.close();
         });
+
+				$('#tipocameraSelect').click(function () {
+					 const tipoCamera = $("#tipocameraSelect").val();
+					 if (tipoCamera == "hikvision"){
+						$("#ipcameraLabel").show();
+						$("#ipcamera").show();
+
+						$("#senhacameraLabel").show();
+						$("#senhacamera").show();
+
+						$("#usuariocameraLabel").show();
+						$("#usuariocamera").show();
+					 }else{
+						$("#ipcameraLabel").hide();
+						$("#ipcamera").hide();
+
+						$("#senhacameraLabel").hide();
+						$("#senhacamera").hide();
+
+						$("#usuariocameraLabel").hide();
+						$("#usuariocamera").hide();
+					 }
+        });
+
+				
     });
     
 
@@ -807,6 +847,7 @@ $studentData =  mysqli_query($con, $query);
                      ?>
           </select>
 
+
 <?php if(($codigo_ == '1') || ($codigo_ == '14')  || ($codigo_ == '15') || ($codigo_ == '22') ){ ?>
 <label class="w3-label w3-text-blue"><b>Tipo Dispositivo</b></label>
 <select name="typekappeltModificado" id="typekappeltModificado" class="w3-input w3-border" >
@@ -816,14 +857,38 @@ $studentData =  mysqli_query($con, $query);
 
 <?php } ?>
 
+
+<?php if(($codigo_ == '13')){ ?>
+<label class="w3-label w3-text-blue"><b>Tipo Dispositivo</b></label>
+<select name="tipocameraSelect" id="tipocameraSelect" class="w3-input w3-border" >
+  <option value="">Padrão Zigbee</option>
+  <option value="hikvision">Camera Hikvision</option>
+</select> 
+
+<?php } ?>
+
+
 <label class="w3-label w3-text-blue"><b>Descrição</b></label>
-<input type="text" class="w3-input w3-border" value="" name="descricao" maxlength=17/> <br/>
-<input type="text" class="w3-input w3-border" value="<?php echo $type_kappelt; ?>" name="type_kappelt" maxlength=30 style="display:none;"/> <br/>
-<input type="text" class="w3-input w3-border" value="<?php echo $traits_type_kappelt; ?>" name="traits_type_kappelt" maxlength=30 style="display:none;"/> <br/>
-<input type="text" class="w3-input w3-border" value="<?php echo $requiresActionTopic_kappelt; ?>" name="requiresActionTopic_kappelt" maxlength=30 style="display:none;"/> <br/>
-<input type="text" class="w3-input w3-border" value="<?php echo $requiresStatusTopic_kappelt; ?>" name="requiresStatusTopic_kappelt" maxlength=30 style="display:none;"/> <br/>
+<input type="text" class="w3-input w3-border" value="" name="descricao" maxlength=17/> 
+
+<label class="w3-label w3-text-blue" name="ipcameraLabel" id="ipcameraLabel" style="display:none;"><b>IP Câmera</b></label>
+<input type="text" class="w3-input w3-border" value="" name="ipcamera" id="ipcamera" maxlength=17 style="display:none;"/>
+
+<label class="w3-label w3-text-blue" name="usuariocameraLabel" id="usuariocameraLabel" style="display:none;"><b>Usuario Câmera</b></label>
+<input type="text" class="w3-input w3-border" value="" name="usuariocamera" id="usuariocamera" maxlength=65 style="display:none;"/>
+
+<label class="w3-label w3-text-blue" name="senhacameraLabel" id="senhacameraLabel" style="display:none;"><b>Senha Câmera</b></label>
+<input type="text" class="w3-input w3-border" value=""  name="senhacamera" id="senhacamera" maxlength=65 style="display:none;"/>
+
+<input type="text" class="w3-input w3-border" value="<?php echo $type_kappelt; ?>" name="type_kappelt" maxlength=30 style="display:none;"/>
+<input type="text" class="w3-input w3-border" value="<?php echo $traits_type_kappelt; ?>" name="traits_type_kappelt" maxlength=30 style="display:none;"/>
+<input type="text" class="w3-input w3-border" value="<?php echo $requiresActionTopic_kappelt; ?>" name="requiresActionTopic_kappelt" maxlength=30 style="display:none;"/>
+<input type="text" class="w3-input w3-border" value="<?php echo $requiresStatusTopic_kappelt; ?>" name="requiresStatusTopic_kappelt" maxlength=30 style="display:none;"/>
+<br/>
 <input type="submit" class="w3-btn w3-blue" name="btnSalvar" value="Salvar Dispositivo"/>
 <input type='submit' class="w3-btn w3-blue" id='btnlimpar' name="btnlimpar" value='Limpar' />
+
+
 <?php } ?>
 
 
