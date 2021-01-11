@@ -1147,6 +1147,93 @@
      "file": "/data/node_modules/node-red-contrib-color-convert/color.js"
     }
    }
+  },
+  "node-red-contrib-hikvision-ultimate": {
+   "name": "node-red-contrib-hikvision-ultimate",
+   "version": "1.0.22",
+   "local": true,
+   "nodes": {
+    "Hikvision-config": {
+     "name": "Hikvision-config",
+     "types": [
+      "Hikvision-config"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-hikvision-ultimate",
+     "file": "/data/node_modules/node-red-contrib-hikvision-ultimate/nodes/Hikvision-config.js"
+    },
+    "ANPR-config": {
+     "name": "ANPR-config",
+     "types": [
+      "ANPR-config"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-hikvision-ultimate",
+     "file": "/data/node_modules/node-red-contrib-hikvision-ultimate/nodes/ANPR-config.js"
+    },
+    "hikvisionUltimateRadar": {
+     "name": "hikvisionUltimateRadar",
+     "types": [
+      "hikvisionUltimateRadar"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-hikvision-ultimate",
+     "file": "/data/node_modules/node-red-contrib-hikvision-ultimate/nodes/hikvisionUltimateRadar.js"
+    },
+    "hikvisionUltimateAlarm": {
+     "name": "hikvisionUltimateAlarm",
+     "types": [
+      "hikvisionUltimateAlarm"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-hikvision-ultimate",
+     "file": "/data/node_modules/node-red-contrib-hikvision-ultimate/nodes/hikvisionUltimateAlarm.js"
+    },
+    "hikvisionUltimateAlarmRaw": {
+     "name": "hikvisionUltimateAlarmRaw",
+     "types": [
+      "hikvisionUltimateAlarmRaw"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-hikvision-ultimate",
+     "file": "/data/node_modules/node-red-contrib-hikvision-ultimate/nodes/hikvisionUltimateAlarmRaw.js"
+    },
+    "hikvisionUltimateANPR": {
+     "name": "hikvisionUltimateANPR",
+     "types": [
+      "hikvisionUltimateANPR"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-hikvision-ultimate",
+     "file": "/data/node_modules/node-red-contrib-hikvision-ultimate/nodes/hikvisionUltimateANPR.js"
+    },
+    "hikvisionUltimatePTZ": {
+     "name": "hikvisionUltimatePTZ",
+     "types": [
+      "hikvisionUltimatePTZ"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-hikvision-ultimate",
+     "file": "/data/node_modules/node-red-contrib-hikvision-ultimate/nodes/hikvisionUltimatePTZ.js"
+    },
+    "hikvisionUltimatePicture": {
+     "name": "hikvisionUltimatePicture",
+     "types": [
+      "hikvisionUltimatePicture"
+     ],
+     "enabled": true,
+     "local": true,
+     "module": "node-red-contrib-hikvision-ultimate",
+     "file": "/data/node_modules/node-red-contrib-hikvision-ultimate/nodes/hikvisionUltimatePicture.js"
+    }
+   }
   }
  },
  "_credentialSecret": "16f86a724f75883e4c51d4194c6a19f04a00f3c748fcb825077a4e40554cac22",

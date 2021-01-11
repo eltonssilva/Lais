@@ -82,7 +82,7 @@ function getFluxocameras(){
   $access_token = Get_BearerToken_NoreRed_Cameras();
 
   $endereco = $_SERVER[HTTP_HOST];
-  $idfluxo = '1da272a7.23fd8d';
+  $idfluxo = '21b80430.90483c';
 
   $url = "http://{$endereco}:1880/flow/{$idfluxo}";
 
@@ -105,7 +105,7 @@ function getFluxocameras(){
 }
 
 function updateFluxoCameras(){
-  $idfluxo = '1da272a7.23fd8d';
+  $idfluxo = '21b80430.90483c';
   $_idWireSaidaGeral = 'c4652b80.83e628';
   $access_token = Get_BearerToken_NoreRed_Cameras();
   $flows = getFluxocameras();
@@ -114,9 +114,9 @@ function updateFluxoCameras(){
   $info = $flows->info;
   $nodes = $flows->nodes;
 
-  // $label = 'ttt';
-  // $info = 'info';
-  // $nodes = $flows->nodes;
+  //  $label = 'ttt';
+  //  $info = 'info';
+   $nodes = $flows->nodes;
 
 
   $ArrayNodes = array();

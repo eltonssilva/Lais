@@ -44,7 +44,7 @@ if(isset($_POST['btnSubmit']))
 		$serialzigbee= $_POST['serialzigbee'];
 		$carga= $_POST['carga'];
 		$dispositivo = $_POST['dispositivo'];
-		$acao = $_POST['acao'];
+		$acao = $_POST['selectacao'];
 		$modelo = $_POST['modelo'];
 		$arr = explode("-",$dispositivo);
 		$id_widget =  $arr[0];
@@ -132,11 +132,46 @@ mysqli_close($con);
             window.close();
              }); 
 
-      //     $('#btnSubmit').click(function () {
-			// //		alert("1223");
-		  //  $("#codigo433mhz1").text("Codigo Controle: ");
-            
-			// }); 
+
+			$('#modelo').click(function () {
+
+					$('#selectacao option').each(function() 
+					{
+        			$(this).remove();
+					});
+
+
+					 const tipoAcao = $("#modelo").val();
+					 if (tipoAcao == "ZW-EU-0"){
+							$("#acao").show();	
+							$("#selectacao").append('<option value=state_right>Rele Direito</option>');
+							$("#selectacao").append('<option value=state_left>Rele Esquerdo</option>');
+								
+					 }else if(tipoAcao == "ZNLDP12LM")
+					 {
+							$("#acao").show();
+							$("#selectacao").append('<option value=state>Lampada Dimmer</option>');
+
+					 }else if(tipoAcao == "ADomoZig")
+					 {
+							$("#acao").show();
+							$("#selectacao").append('<option value=state_l1>Relé 1</option>');
+							$("#selectacao").append('<option value=state_l2>Relé 2</option>');
+							$("#selectacao").append('<option value=state_l3>Relé 3</option>');
+							$("#selectacao").append('<option value=state_l4>Relé 4</option>');
+							$("#selectacao").append('<option value=state_l5>Relé 5</option>');
+							$("#selectacao").append('<option value=state_l6>Relé 6</option>');
+							$("#selectacao").append('<option value=state_l7>Relé 7</option>');
+							$("#selectacao").append('<option value=state_l8>Relé 8</option>');
+							$("#selectacao").append('<option value=state_l9>Relé 9</option>');
+							$("#selectacao").append('<option value=state_l10>Relé 10</option>');
+							$("#selectacao").append('<option value=state_l11>Relé 11</option>');
+							$("#selectacao").append('<option value=state_l12>Relé 12</option>');
+					 }
+
+
+					 
+        });
  
     });
 	
@@ -158,17 +193,27 @@ mysqli_close($con);
 		 
 				 <br>
 <label class="w3-label w3-text-blue"><b>Serial Zigbee</b></label>
-<input type="text" class="w3-input w3-border" value= "";  name="serialzigbee" id="serialzigbee"  maxlength=16/>
+<input type="text" class="w3-input w3-border" value= "";  name="serialzigbee" id="serialzigbee"  maxlength=26/>
 <br>
-<label class="w3-label w3-text-blue"><b>Tipo de Ação</b></label>
+<!-- <label class="w3-label w3-text-blue"><b>Tipo de Ação</b></label>
 
 <input type="text" class="w3-input w3-border" value= "";  name="acao" id="acao"  maxlength=16/>
-<br>
+<br> -->
 
 <label class="w3-label w3-text-blue"><b>Modelo Dispositivo</b></label>
 <select class="w3-input w3-border" name="modelo" id="modelo">
-  <option value="ZNLDP12LM" selected>ZNLDP12LM</option> 
+  <option value="ZNLDP12LM" selected>ZNLDP12LM</option>
+	<option value="ZW-EU-0" selected>ZW-EU-02</option> 
+	<option value="ADomoZig" selected>ADomoZig</option>
 </select>
+
+
+
+<div class="tipoestado" name="acao" id="acao" style="display:none;">
+<label class="w3-label w3-text-blue"><b>Tipo de Ação</b></label>
+ <select name="selectacao" id="selectacao" class="w3-input w3-border selectestado" >
+</select> 
+</div>
 
 
 <br>

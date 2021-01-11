@@ -9,6 +9,7 @@
         "node-red-contrib-color-convert": "0.0.8",
         "node-red-contrib-firebase": "~1.1.1",
         "node-red-contrib-hikcamera": "~1.1.8",
+        "node-red-contrib-hikvision-ultimate": "~1.0.22",
         "node-red-contrib-homekit": "~0.2.1",
         "node-red-contrib-http-request": "~0.1.14",
         "node-red-contrib-image-tools": "~0.2.5",
