@@ -143,18 +143,21 @@ mysqli_close($con);
 
 					 const tipoAcao = $("#modelo").val();
 					 if (tipoAcao == "ZW-EU-0"){
-							$("#acao").show();	
+							$("#acao").show();
+							$("#imgdispositivo").attr("src","/png/dispositivos/ZW-EU-02.jpg");
 							$("#selectacao").append('<option value=state_right>Rele Direito</option>');
 							$("#selectacao").append('<option value=state_left>Rele Esquerdo</option>');
 								
 					 }else if(tipoAcao == "ZNLDP12LM")
 					 {
 							$("#acao").show();
+							$("#imgdispositivo").attr("src","/png/dispositivos/ZNLDP12LM.jpg");
 							$("#selectacao").append('<option value=state>Lampada Dimmer</option>');
 
 					 }else if(tipoAcao == "ADomoZig")
 					 {
 							$("#acao").show();
+							$("#imgdispositivo").attr("src","/png/dispositivos/DNCKATSW002.jpg");
 							$("#selectacao").append('<option value=state_l1>Relé 1</option>');
 							$("#selectacao").append('<option value=state_l2>Relé 2</option>');
 							$("#selectacao").append('<option value=state_l3>Relé 3</option>');
@@ -167,7 +170,50 @@ mysqli_close($con);
 							$("#selectacao").append('<option value=state_l10>Relé 10</option>');
 							$("#selectacao").append('<option value=state_l11>Relé 11</option>');
 							$("#selectacao").append('<option value=state_l12>Relé 12</option>');
+					 }else if(tipoAcao == "AduroSmart81849")
+					 {
+							$("#acao").show();
+							$("#imgdispositivo").attr("src","/png/dispositivos/81849.jpg");
+							$("#selectacao").append('<option value=state>Relé 1</option>');
+
+					 }else if(tipoAcao == "AduroSmart81855")
+					 {
+							$("#acao").show();
+							$("#imgdispositivo").attr("src","/png/dispositivos/81855.jpg");
+							$("#selectacao").append('<option value=state>Relé 1</option>');
+
+					 }else if(tipoAcao == "AU-A1ZBPIAB")
+					 {
+							$("#acao").show();
+							$("#imgdispositivo").attr("src","/png/dispositivos/AU-A1ZBPIAB.jpg");
+							$("#selectacao").append('<option value=state>Relé 1</option>');
+
+					 }else if(tipoAcao == "BW-SS7")
+					 {
+							$("#acao").show();
+							$("#imgdispositivo").attr("src","/png/dispositivos/BW-SS7.jpg");
+							$("#selectacao").append('<option value=state>Relé 1</option>');
+
+					 }else if(tipoAcao == "BASICZBR3")
+					 {
+							$("#acao").show();
+							$("#imgdispositivo").attr("src","/png/dispositivos/BASICZBR3.jpg");
+							$("#selectacao").append('<option value=state>Relé 1</option>');
+
+					 }else if(tipoAcao == "BW-SS7")
+					 {
+							$("#acao").show();
+							$("#imgdispositivo").attr("src","/png/dispositivos/BW-SS7.jpg");
+							$("#selectacao").append('<option value=state>Relé 1</option>');
+
+					 }else if(tipoAcao == "ZBMINI")
+					 {
+							$("#acao").show();
+							$("#imgdispositivo").attr("src","/png/dispositivos/ZBMINI.jpg");
+							$("#selectacao").append('<option value=state>Relé 1</option>');
+
 					 }
+
 
 
 					 
@@ -202,16 +248,36 @@ mysqli_close($con);
 
 <label class="w3-label w3-text-blue"><b>Modelo Dispositivo</b></label>
 <select class="w3-input w3-border" name="modelo" id="modelo">
-  <option value="ZNLDP12LM" selected>ZNLDP12LM</option>
-	<option value="ZW-EU-0" selected>ZW-EU-02</option> 
 	<option value="ADomoZig" selected>ADomoZig</option>
+	<option value="ZNLDP12LM">ZNLDP12LM</option>
+	<option value="ZW-EU-0">ZW-EU-02</option> 
+	<option value="AduroSmart81849">AduroSmart 81849</option>
+	<option value="AduroSmart81855">AduroSmart 81855</option>
+	<option value="AU-A1ZBPIAB">Aurora Lighting AU-A1ZBPIAB</option>
+	<option value="BW-SS7">BlitzWolf BW-SS7</option>
+	<option value="BASICZBR3">SONOFF BASICZBR3</option>
+	<option value="BW-SS7">BlitzWolf BW-SS7</option>
+	<option value="ZBMINI">SONOFF ZBMINI</option>
 </select>
 
 
 
 <div class="tipoestado" name="acao" id="acao" style="display:none;">
 <label class="w3-label w3-text-blue"><b>Tipo de Ação</b></label>
- <select name="selectacao" id="selectacao" class="w3-input w3-border selectestado" >
+
+<table>
+  <tr>
+    <th>
+		<img name="imgdispositivo" id="imgdispositivo" src="/png/dispositivos/DNCKATSW002.jpg" alt="some text" width=150 height=150>
+    </th>
+    <th>
+		<select name="selectacao" id="selectacao" class="w3-input w3-border selectestado" >
+    </th>
+  </tr>
+</table>
+
+
+
 </select> 
 </div>
 
