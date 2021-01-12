@@ -213,6 +213,13 @@ mysqli_close($con);
 							$("#selectacao").append('<option value=state>Relé 1</option>');
 
 					 }
+					 else if(tipoAcao == "GENERICO")
+					 {
+							$("#acao").show();
+							$("#imgdispositivo").attr("src","/png/dispositivos/GENERICO.jpg");
+							$("#selectacao").append('<option value=state>Relé 1</option>');
+
+					 }
 
 
 
@@ -258,11 +265,12 @@ mysqli_close($con);
 	<option value="BASICZBR3">SONOFF BASICZBR3</option>
 	<option value="BW-SS7">BlitzWolf BW-SS7</option>
 	<option value="ZBMINI">SONOFF ZBMINI</option>
+	<option value="GENERICO">Dispositivo Generico</option>
 </select>
 
 
 
-<div class="tipoestado" name="acao" id="acao" style="display:none;">
+<div class="tipoestado" name="acao" id="acao>
 <label class="w3-label w3-text-blue"><b>Tipo de Ação</b></label>
 
 <table>
@@ -271,7 +279,20 @@ mysqli_close($con);
 		<img name="imgdispositivo" id="imgdispositivo" src="/png/dispositivos/DNCKATSW002.jpg" alt="some text" width=150 height=150>
     </th>
     <th>
-		<select name="selectacao" id="selectacao" class="w3-input w3-border selectestado" >
+		<select name="selectacao" id="selectacao" class="w3-input w3-border selectestado">
+		<option value=state_l1 selected>Relé 1</option>
+		<option value=state_l2 >Relé 2</option>
+		<option value=state_l3 >Relé 3</option>
+		<option value=state_l4 >Relé 4</option>
+		<option value=state_l5 >Relé 5</option>
+		<option value=state_l6 >Relé 6</option>
+		<option value=state_l7 >Relé 7</option>
+		<option value=state_l8 >Relé 8</option>
+		<option value=state_l9 >Relé 9</option>
+		<option value=state_l10 >Relé 10</option>
+		<option value=state_l11 >Relé 11</option>
+		<option value=state_l12 >Relé 12</option>
+		</select>
     </th>
   </tr>
 </table>
