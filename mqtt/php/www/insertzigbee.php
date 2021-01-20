@@ -147,6 +147,16 @@ mysqli_close($con);
 										$("#valorcarga").val(valorzigbee_json.pressure);
 										$( "#btnSubmit" ).prop( "disabled", false );
 								  }
+
+									// Para Sensor de Pressão
+									else if (valorzigbee_json.hasOwnProperty('illuminance_lux') && (tipo_dispositivo == '04') ) 
+								  {
+										$("#codigo433mhz1").text(" ");
+										$("#carga").val("illuminance_lux");
+										$("#valorcarga").val(valorzigbee_json.illuminance_lux);
+										$( "#btnSubmit" ).prop( "disabled", false );
+								  }
+
 									// Para Botão
 									else if (valorzigbee_json.hasOwnProperty('click')  && (tipo_dispositivo == '17' || tipo_dispositivo == '01' || tipo_dispositivo == '10' || tipo_dispositivo == '14' || tipo_dispositivo == '22' || tipo_dispositivo == '09' || tipo_dispositivo == '15' || tipo_dispositivo == '20') ) 
 								  {
