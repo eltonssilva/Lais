@@ -1682,7 +1682,7 @@ elseif ($valor == "Off")
 <a href="javascript: void(0);" onclick="window.open('insertnivel.php', 'Adcionar Nivel', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=410');"><img src="/png/64/level.png">Adicionar Nivel</a>
 <a href="javascript: void(0);" onclick="window.open('insertambiente.php', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=480');"><img src="/png/64/home.png">Adicionar Ambiente</a>
 <a onClick="return confirm('Tem Certeza que deseja deletar todos os dispositivos!')" href="deletedispositivo.php?id=<?php echo 'd1'; ?>"><img src="/png/32/delete.png">Deletar todos dispositivos</a>
-<a onClick="return confirm('Tem Certeza que deseja remover todos os dispositivos do Google Home (Obs. Essa ação demora alguns segudos)!')" href="deletedispositivo.php?id=<?php echo 'd2'; ?>"><img src="/png/32/delete.png">Remove Dispositivos do GoogleHome</a>  
+<a onClick="return confirm('Tem Certeza que deseja limpar todos os dispositivos do Servidor')" href="deletedispositivo.php?id=<?php echo 'd2'; ?>"><img src="/png/32/delete.png">Limpa Dispositivos</a>  
  
 </div>
     

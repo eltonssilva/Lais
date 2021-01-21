@@ -82,6 +82,13 @@ if(mysqli_query($con, $query)) {
 echo "Impossivel Deletar!";
 }
 
+$query = "DELETE FROM `zigbeedevice` WHERE `zigbeedevice`.`id_widget` = {$id}";
+if(mysqli_query($con, $query)) {
+} else {
+echo "Impossivel Deletar!";
+}
+
+//
 
 $query = "delete from rx433mhz_persiana where id_widget= {$id}";
 
@@ -119,7 +126,26 @@ else if($id == "d1")
 	
 $query = "SELECT username_iphone FROM `widget` where 1=1";
 $dispositivo = mysqli_query($con, $query);
-//mysql_close($con);
+
+
+$query = "DELETE FROM `zigbeedevice` where 1=1";
+if(mysqli_query($con, $query)) {
+} else {
+echo "Impossivel Deletar!";
+}
+
+$query = "delete from rx433mhz where 1=1";
+if(mysqli_query($con, $query)) {
+} else {
+echo "Impossivel Deletar!";
+}
+
+$query = "DELETE FROM `associar_widget` where 1=1";
+if(mysqli_query($con, $query)) {
+} else {
+echo "Impossivel Deletar!";
+}
+
 		
 while($rec = mysqli_fetch_array($dispositivo)) 
 	{ 
@@ -219,9 +245,14 @@ echo "Impossivel Deletar!";
 
 }
 
-else if($id == "d2")
+else if($id == "d2")  // Purga todos os dispositivo do Banco de Dados
 	
 {
+	$topico = "/house/remover/01AAAAAAAA";
+	$reterned = '-r';
+	$comando = "1";
+	$output = shell_exec("mosquitto_pub -h mqttautodomo -d -u {$usuario} -P {$senha} -t '{$topico}' -m '{$comando}' -q 1 {$reterned}");
+
 	updateFluxo();  //Atualiza o Fluxo NodeRed
 	updateFluxoCameras();  //Atualiza o Fluxo NodeRed das Cameras Hikv
 	header("location:main.php");
