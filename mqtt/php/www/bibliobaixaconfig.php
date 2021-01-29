@@ -24,8 +24,8 @@ function SaveDates($result)
 			$Jsonresult = json_decode($result, TRUE);;
 		   $numeroserial =  $Jsonresult['numeroserial'];
 		   $chavelocal =  $Jsonresult['chavelocal'];
-		 //  $chavedispositivo =  $Jsonresult[0]['chavedispositivo'];
-		   $chavedispositivo = gerarSerial(12,4);
+		   $chavedispositivo =  $Jsonresult['chavedispositivo'];
+		  // $chavedispositivo = gerarSerial(12,4);											//Para Gerar Chave Aleatoria
 		   $nome =  $Jsonresult['nome'];
 		   $email =  $Jsonresult['email'];
 		   $userid_gh =  $Jsonresult['userid_gh'];

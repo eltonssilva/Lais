@@ -278,7 +278,7 @@ mysqli_close($con);
 		 <br>
 		 
 <label class="w3-label w3-text-blue"><b>Serial Zigbee</b></label>
-<input type="text" class="w3-input w3-border" value= "";  name="serialzigbee" id="serialzigbee"  maxlength=16/>
+<input type="text" class="w3-input w3-border" value= "";  name="serialzigbee" id="serialzigbee"  maxlength=18/>
 <br>
 <label class="w3-label w3-text-blue"><b>Tipo de Carga</b></label>
 <h6 id="codigo433mhz1"></h6>
