@@ -98,15 +98,16 @@ mysqli_close($con);
 		var tipo_dispositivo =  $("#dispositivo").val();
 		var root_topico = data.substring(traco2+2,barra2);
 		var semi_topico = data.substring(barra2+1,barra3);
-		
-		
+		var valorEstado = '{"linkquality":94,"state_bottom":"OFF","state_center":"OFF","state_top":"OFF"}';
+		var valorEstadoJson = JSON.parse(valorEstado);
 		tipo_dispositivo = tipo_dispositivo.substring(tipo_dispositivo.length - 12, tipo_dispositivo.length - 10);
 			
-    
+
 	   
 				   if ( root_topico == "housezigbee")
 				   {
 					$("#serialzigbee").val(semi_topico);
+					$(".cargaselect").hide();
 				//	$("#codigo433mhz1").text(valor);
 				//	$("#tipocarga").text(tipo_dispositivo);
 										
@@ -120,7 +121,23 @@ mysqli_close($con);
 										$("#valorcarga").val(valorzigbee_json.contact);
 										$( "#btnSubmit" ).prop( "disabled", false );
 								  }
-								  
+
+								  else if (valorzigbee_json.hasOwnProperty('state_top') && (tipo_dispositivo == '17' || tipo_dispositivo == '01' || tipo_dispositivo == '14' || tipo_dispositivo == '22'  || tipo_dispositivo == '15') ) 
+								  {		
+									    $("#cargaSelect").empty();
+										$("#cargaSelect").show();
+										$("#cargaSelect").append('<option value=state_top>Sessão 1 (Réle Superior)</option>');
+										$("#cargaSelect").append('<option value=state_center>Sessão 2 (Réle do Meio)</option>');
+										$("#cargaSelect").append('<option value=state_bottom>Sessão 3 (Réle Inferior)</option>');
+
+										$("#carga").val("state_top");
+										$("#valorcarga").val(valorzigbee_json.state_top);
+
+									    $("#codigo433mhz1").text(" ");
+
+									//	$("#valorcarga").val(valorzigbee_json.state_top);
+										$("#btnSubmit").prop( "disabled", false );
+								  }
 								  // Para Sensor de Temperatura
 								  else if (valorzigbee_json.hasOwnProperty('temperature') && (tipo_dispositivo == '03') ) 
 								  {
@@ -165,11 +182,12 @@ mysqli_close($con);
 										$("#valorcarga").val(valorzigbee_json.click);
 										$( "#btnSubmit" ).prop( "disabled", false );
 								  }
+								  
 									// Para Sensor Vibração
 									else if (valorzigbee_json.hasOwnProperty('action')  && (tipo_dispositivo == '17' || tipo_dispositivo == '01' || tipo_dispositivo == '13' || tipo_dispositivo == '14' || tipo_dispositivo == '22'  || tipo_dispositivo == '15') ) 
 								  {
 										$("#codigo433mhz1").text(" ");
-										$("#carga").val("action");
+										$("#carga").val(valorzigbee_json.action);
 										$("#valorcarga").val(valorzigbee_json.action);
 										$( "#btnSubmit" ).prop( "disabled", false );
 								  }
@@ -257,6 +275,12 @@ mysqli_close($con);
 		   $("#codigo433mhz1").text("Codigo Controle: ");
             
 			}); 
+
+			$('#cargaSelect').click(function () {
+				const tipoAcao = $("#cargaSelect").val();
+                $("#carga").val(tipoAcao);
+			}); 
+
  
     });
 	
@@ -283,7 +307,11 @@ mysqli_close($con);
 <label class="w3-label w3-text-blue"><b>Tipo de Carga</b></label>
 <h6 id="codigo433mhz1"></h6>
 <h6 id="tipocarga"></h6>
-<input type="text" class="w3-input w3-border" value= "";  name="carga" id="carga"  maxlength=16/>
+
+<select name="cargaSelect" id="cargaSelect" class="w3-input w3-border cargaSelect" >
+</select> 
+<br>
+<input type="carga" class="w3-input w3-border" value= "";  name="carga" id="carga"  />
 <br>
 <label class="w3-label w3-text-blue"><b>Valor da Carga</b></label>
 <input type="text" class="w3-input w3-border" value= "";  name="valorcarga" id="valorcarga"  maxlength=16/>

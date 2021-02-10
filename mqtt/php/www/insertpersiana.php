@@ -92,7 +92,9 @@ mysqli_close($con);
   <option value="P100">Abrir</option>
   <option value="P000">Fechar</option>
   <option value="P050">Meia janela</option>
+  <option value="P020">20%</option>
   <option value="P101">Parar</option>
+  <option value="P102">Abrir-Parar-Fechar</option>
 </select> 
 
 <label class="w3-label w3-text-blue"><b>Dispositivo a ser acionado</b></label>

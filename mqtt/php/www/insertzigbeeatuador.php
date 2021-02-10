@@ -206,7 +206,16 @@ mysqli_close($con);
 							$("#imgdispositivo").attr("src","/png/dispositivos/BW-SS7.jpg");
 							$("#selectacao").append('<option value=state>Relé 1</option>');
 
-					 }else if(tipoAcao == "ZBMINI")
+					 }else if(tipoAcao == "zemismartWallSwitch")
+					 {
+							$("#acao").show();
+							$("#imgdispositivo").attr("src","/png/dispositivos/zemismartWallSwitch.png");
+							$("#selectacao").append('<option value=state_top>Sessão 1 (Réle Superior)</option>');
+							$("#selectacao").append('<option value=state_center>Sessão 2 (Réle do Meio)</option>');
+							$("#selectacao").append('<option value=state_bottom>Sessão 3 (Réle Inferior)</option>');
+
+					 }
+					 else if(tipoAcao == "ZBMINI")
 					 {
 							$("#acao").show();
 							$("#imgdispositivo").attr("src","/png/dispositivos/ZBMINI.jpg");
@@ -265,6 +274,7 @@ mysqli_close($con);
 	<option value="BASICZBR3">SONOFF BASICZBR3</option>
 	<option value="BW-SS7">BlitzWolf BW-SS7</option>
 	<option value="ZBMINI">SONOFF ZBMINI</option>
+	<option value="zemismartWallSwitch">Interruptor ZemiSmart</option>
 	<option value="GENERICO">Dispositivo Generico</option>
 </select>
 

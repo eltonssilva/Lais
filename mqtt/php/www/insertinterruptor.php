@@ -49,7 +49,7 @@ $setPubTopic0 = $rec['setPubTopic0'];
 
 	}
 
-$query = "SELECT id, Descricao, setName0, setSubTopic0, setPubTopic0  FROM `widget` where tipo =1 and `dispositivo_fisico` = '1'";
+$query = "SELECT id, Descricao, setName0, setSubTopic0, setPubTopic0  FROM `widget` where (tipo =1 and `dispositivo_fisico` = '1') or tipo =15";
 mysqli_set_charset($con, 'utf8');
 $studentData = mysqli_query($con, $query);
 //$recStudent = mysql_fetch_array($studentData);

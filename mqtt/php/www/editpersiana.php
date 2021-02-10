@@ -115,8 +115,10 @@ while($recinterruptor = mysqli_fetch_array($interruptor)) {
  <select name="estado" id="estado" class="w3-input w3-border" >
   <option value="P100" <?php    if ($estado_default == "P100"){echo " selected='selected'";}  ?> >Abrir</option>
   <option value="P000" <?php    if ($estado_default == "P000"){echo " selected='selected'";}  ?> >Fechar</option>
+  <option value="P020" <?php    if ($estado_default == "P020"){echo " selected='selected'";}  ?> >20%</option>
   <option value="P050" <?php    if ($estado_default == "P050"){echo " selected='selected'";}  ?> >Meia Janela</option>
   <option value="P101" <?php    if ($estado_default == "P101"){echo " selected='selected'";}  ?> >Parar</option>
+  <option value="P102" <?php    if ($estado_default == "P102"){echo " selected='selected'";}  ?> >Abrir-Parar-Fechar</option>
 </select> 
 
 <input type="checkbox" name="habilitado" value="1" <?php  echo $habilitado_t ?> />Habilitado<br>

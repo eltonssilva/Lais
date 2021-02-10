@@ -1785,6 +1785,8 @@ if($estado == "P100") { echo 'Abrir';}
 if($estado == "P000") { echo 'Fechar';}
 if($estado == "P050") { echo 'Meia Janela';}
 if($estado == "P101") { echo 'Parar';}
+if($estado == "P102") { echo 'Abrir-Parar-Fecha';}
+if($estado == "P020") { echo '20%';}
 ?> 
 </td>
 <td> <?php echo $rec['habilitado']; ?> </td>
