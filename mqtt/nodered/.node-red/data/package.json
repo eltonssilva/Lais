@@ -18,7 +18,7 @@
         "node-red-contrib-onvif": "0.0.2",
         "node-red-contrib-send-multipart-formdata": "~1.1.0",
         "node-red-contrib-ui-media": "~1.2.0",
-        "node-red-dashboard": "~2.19.2",
+        "node-red-dashboard": "~2.26.2",
         "node-red-node-mysql": "0.0.18",
         "node-red-node-pi-gpio": "~1.0.6",
         "node-red-node-pushover": "0.0.16"
