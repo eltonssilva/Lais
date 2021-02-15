@@ -1151,7 +1151,7 @@
   "node-red-contrib-hikvision-ultimate": {
    "name": "node-red-contrib-hikvision-ultimate",
    "version": "1.0.22",
-   "local": false,
+   "local": true,
    "nodes": {
     "Hikvision-config": {
      "name": "Hikvision-config",

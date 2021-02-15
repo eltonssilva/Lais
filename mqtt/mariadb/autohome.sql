@@ -180,7 +180,8 @@ INSERT INTO `dispositivo_type` (`id`, `Descricao`, `codigo`, `src_imagem`, `type
 (21, 'Alarme', '21', '/png/64/alarme.png', 'Switch', 'OpenClose', 1, 1),
 (22, 'Tomada Inteligente', '22', '/png/64/socket_f.png', 'Outlet', 'OnOff', 1, 1),
 (23, 'Cena', '23', '/png/64/cena.png', 'Scene', 'OnOff', 1, 1),
-(24, 'Lampada dimerizavel', '24', '/png/64/bulb.png', 'Light', 'OnOff-Brightness', 1, 1);
+(24, 'Lampada dimerizavel', '24', '/png/64/bulb.png', 'Light', 'OnOff-Brightness', 1, 1),
+(25, 'Controle Som', '25', '/png/64/som.png', '', '', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -843,6 +844,25 @@ CREATE TABLE `cameralpr` (
 --
 
 --
+-- Estrutura para tabela `tuyaDevice`
+--
+
+CREATE TABLE `tuyaDevice` (
+  `id` int(11) NOT NULL,
+  `tuyaIDevice` varchar(128) NOT NULL,
+  `code` varchar(255) NOT NULL,
+  `value` varchar(128) NOT NULL,
+  `topico` varchar(128) NOT NULL,
+  `id_widget` int(11) NOT NULL,
+  `habilitado` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Índices de tabelas apagadas
+--
+
+
+--
 -- Índices de tabela `alerta`
 --
 ALTER TABLE `alerta`
@@ -1084,6 +1104,16 @@ ALTER TABLE `veiculos_lpr`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `id` (`id`);
 
+-- Índices de tabela `tuyaDevice`
+--
+ALTER TABLE `tuyaDevice`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`);
+
+--
+-- AUTO_INCREMENT de tabelas apagadas
+--
+
 
 -- AUTO_INCREMENT de tabela `alerta`
 --
@@ -1312,6 +1342,14 @@ ALTER TABLE `cameralpr`
 
 ALTER TABLE `veiculos_lpr`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+--
+-- AUTO_INCREMENT de tabela `tuyaDevice`
+--
+ALTER TABLE `tuyaDevice`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+COMMIT;
+
 
 COMMIT;
 
