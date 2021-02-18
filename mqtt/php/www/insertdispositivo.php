@@ -869,7 +869,7 @@ $studentData =  mysqli_query($con, $query);
 
 
 <label class="w3-label w3-text-blue"><b>Descrição</b></label>
-<input type="text" class="w3-input w3-border" value="" name="descricao" maxlength=17/> 
+<input type="text" class="w3-input w3-border" value="" name="descricao" maxlength=31/> 
 
 <label class="w3-label w3-text-blue" name="ipcameraLabel" id="ipcameraLabel" style="display:none;"><b>IP Câmera</b></label>
 <input type="text" class="w3-input w3-border" value="" name="ipcamera" id="ipcamera" maxlength=17 style="display:none;"/>
