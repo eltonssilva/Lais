@@ -69,7 +69,7 @@ var semi_topico = data.substring(barra2+1,barra3);
 	   
 	   if ( semi_topico == "smartinterruptor")
 	   {
-	   	$("#codigo433mhz1").text("Codigo Controle: " + valor);
+	   	$("#codigo433mhz1").text("Codigo Controle: " + valor.substr(0, 14));
 	   }
 
 		 if ( semi_topico == "newdevice")
