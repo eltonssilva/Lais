@@ -65,7 +65,6 @@ var semi_topico = data.substring(barra2+1,barra3);
 	   {
 	   	$("#codigo433mhz1").text("Codigo Controle: " + valor);
 	   }
-	   // <h6 id="codigo433mhz1">Código Radio 433mhz - 4345655665</h6>
 	   
 	   if ( semi_topico == "smartinterruptor")
 	   {
