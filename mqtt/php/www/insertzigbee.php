@@ -65,7 +65,7 @@ $query =  "INSERT INTO `zigbeedevice` (`id`, `serialzigbee`, `carga`,  `acao`,  
 
 
 
-$query = "SELECT id, Descricao, username_iphone, setPubTopic0 FROM widget WHERE tipo_geral = 17 OR tipo_geral = 2 OR tipo_geral = 3 OR tipo_geral = 4  OR tipo_geral = 9 OR tipo_geral = 7 OR tipo_geral = 1 OR tipo_geral = 14  OR tipo_geral = 20   OR tipo_geral = 24  OR tipo_geral = 10";
+$query = "SELECT id, Descricao, username_iphone, setPubTopic0 FROM widget WHERE tipo_geral = 17 OR tipo_geral = 2 OR tipo_geral = 3 OR tipo_geral = 4  OR tipo_geral = 9 OR tipo_geral = 7 OR tipo_geral = 1 OR tipo_geral = 14 OR tipo_geral = 13  OR tipo_geral = 20   OR tipo_geral = 24  OR tipo_geral = 10";
 mysqli_set_charset($con, 'utf8');
 $studentData = mysqli_query($con, $query);
 //$recStudent = mysql_fetch_array($studentData);
@@ -171,6 +171,15 @@ mysqli_close($con);
 										$("#codigo433mhz1").text(" ");
 										$("#carga").val("illuminance_lux");
 										$("#valorcarga").val(valorzigbee_json.illuminance_lux);
+										$( "#btnSubmit" ).prop( "disabled", false );
+								  }
+
+									// Para Sensor de Pressão
+									else if (valorzigbee_json.hasOwnProperty('occupancy') && (tipo_dispositivo == '13') ) 
+								  {
+										$("#codigo433mhz1").text(" ");
+										$("#carga").val("occupancy");
+										$("#valorcarga").val(valorzigbee_json.occupancy);
 										$( "#btnSubmit" ).prop( "disabled", false );
 								  }
 
