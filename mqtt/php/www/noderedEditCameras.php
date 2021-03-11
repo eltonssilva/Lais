@@ -92,7 +92,6 @@ function getFluxocameras(){
         'header' => 'Authorization: Bearer '. $access_token  . "\r\n"  . 
         "Content-Type: application/json\r\n",
         'method'  => 'GET',
-        Get_Devices_Movimento()
 
     	)
 	);

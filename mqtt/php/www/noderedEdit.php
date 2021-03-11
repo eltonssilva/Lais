@@ -95,7 +95,7 @@ function getFluxo(){
     'http' => array(
         'header' => 'Authorization: Bearer '. $access_token  . "\r\n"  . 
         "Content-Type: application/json\r\n",
-        'method'  => 'GET',Get_Devices()
+        'method'  => 'GET',
 
     	)
 	);

@@ -1,7 +1,9 @@
 <?php
 require_once("usuario/dados_bd.php");
 include("segurancaconfig.php"); // Inclui o arquivo com o sistema de segurança
-require_once("noderedEdit.php");
+include("noderedEdit.php");
+include("tagoio.php");
+
 protegePagina(); // Chama a função que protege a página
 $con2 = mysqli_connect($DB_SERVER, $DB_USER, $DB_PASS, $DB_NAME);
 $msg = "";
@@ -112,6 +114,7 @@ if(isset($_POST['btn']))
 				}
 	mysqli_close($con);
 	updateFluxo();  //Atualiza o Fluxo NodeRed
+	updateFluxoTago();
 	}
 
 $query = "SELECT * FROM `servidor` where id =1";
@@ -180,10 +183,12 @@ mysqli_close($con2);
 <input type='text' class='w3-input w3-border' value="<?php echo $recStudent['userid_gh']; ?>" name="userid_gh"/> <br/> -->
 <!-- <label class="w3-label w3-text-blue"><b>Senha Usuario Gbridge <?php echo "- (Usuario: " . strtoupper ($recStudent['pin']) . " )"; ?> </b></label>
 <input type='text' class='w3-input w3-border' value="<?php echo $recStudent['senha_user_gh']; ?>" name="senha_user_gh"/> <br/>
-<label class="w3-label w3-text-blue"><b>ApiKey Gbridge</b></label>
-<input type='text' class='w3-input w3-border' value="<?php echo $recStudent['apikey_gh']; ?>" name="apikey_gh"/> <br/>
+
 <label class="w3-label w3-text-blue"><b>ID ApiKey Gbridge</b></label> -->
 <!-- <input type='text' class='w3-input w3-border' value="<?php echo $recStudent['apikey_id']; ?>" name="apikey_id"/> <br/> -->
+
+<label class="w3-label w3-text-blue"><b>TAGO.io</b></label>
+<input type='text' class='w3-input w3-border' value="<?php echo $recStudent['apikey_gh']; ?>" name="apikey_gh"/> <br/>
 
 <label class="w3-label w3-text-blue"><b>Token Google Home (Nora)</b></label>
 <input type='text' class='w3-input w3-border' value="<?php echo $recStudent['bearertoken']; ?>" name="nora"/> <br/>
