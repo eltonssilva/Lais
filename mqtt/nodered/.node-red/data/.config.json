@@ -467,7 +467,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-md5",
-     "file": "/data/node_modules/node-red-contrib-md5/md5.js"
+     "file": "/data/node_modules/@types/node-red-contrib-md5/md5.js"
     }
    }
   },
@@ -485,7 +485,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-node-mysql",
-     "file": "/data/node_modules/node-red-node-mysql/68-mysql.js"
+     "file": "/data/node_modules/@types/node-red-node-mysql/68-mysql.js"
     }
    }
   },
@@ -502,7 +502,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-node-pushover",
-     "file": "/data/node_modules/node-red-node-pushover/57-pushover.js"
+     "file": "/data/node_modules/@types/node-red-node-pushover/57-pushover.js"
     }
    }
   },
@@ -520,7 +520,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-homekit",
-     "file": "/data/node_modules/node-red-contrib-homekit/homekit.js"
+     "file": "/data/node_modules/@types/node-red-contrib-homekit/homekit.js"
     }
    }
   },
@@ -540,7 +540,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-node-pi-gpio",
-     "file": "/data/node_modules/node-red-node-pi-gpio/36-rpi-gpio.js"
+     "file": "/data/node_modules/@types/node-red-node-pi-gpio/36-rpi-gpio.js"
     }
    }
   },
@@ -557,7 +557,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-onvif",
-     "file": "/data/node_modules/node-red-contrib-onvif/onvif/snapshot.js"
+     "file": "/data/node_modules/@types/node-red-contrib-onvif/onvif/snapshot.js"
     }
    }
   },
@@ -593,7 +593,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_base.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_base.js"
     },
     "ui_button": {
      "name": "ui_button",
@@ -603,7 +603,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_button.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_button.js"
     },
     "ui_dropdown": {
      "name": "ui_dropdown",
@@ -613,7 +613,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_dropdown.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_dropdown.js"
     },
     "ui_switch": {
      "name": "ui_switch",
@@ -623,7 +623,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_switch.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_switch.js"
     },
     "ui_slider": {
      "name": "ui_slider",
@@ -633,7 +633,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_slider.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_slider.js"
     },
     "ui_numeric": {
      "name": "ui_numeric",
@@ -643,7 +643,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_numeric.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_numeric.js"
     },
     "ui_text_input": {
      "name": "ui_text_input",
@@ -653,7 +653,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_text_input.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_text_input.js"
     },
     "ui_date_picker": {
      "name": "ui_date_picker",
@@ -663,7 +663,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_date_picker.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_date_picker.js"
     },
     "ui_colour_picker": {
      "name": "ui_colour_picker",
@@ -673,7 +673,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_colour_picker.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_colour_picker.js"
     },
     "ui_form": {
      "name": "ui_form",
@@ -683,7 +683,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_form.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_form.js"
     },
     "ui_text": {
      "name": "ui_text",
@@ -693,7 +693,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_text.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_text.js"
     },
     "ui_gauge": {
      "name": "ui_gauge",
@@ -703,7 +703,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_gauge.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_gauge.js"
     },
     "ui_chart": {
      "name": "ui_chart",
@@ -713,7 +713,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_chart.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_chart.js"
     },
     "ui_audio": {
      "name": "ui_audio",
@@ -723,7 +723,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_audio.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_audio.js"
     },
     "ui_toast": {
      "name": "ui_toast",
@@ -733,7 +733,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_toast.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_toast.js"
     },
     "ui_ui_control": {
      "name": "ui_ui_control",
@@ -743,7 +743,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_ui_control.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_ui_control.js"
     },
     "ui_template": {
      "name": "ui_template",
@@ -753,7 +753,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_template.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_template.js"
     },
     "ui_link": {
      "name": "ui_link",
@@ -763,7 +763,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_link.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_link.js"
     },
     "ui_tab": {
      "name": "ui_tab",
@@ -773,7 +773,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_tab.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_tab.js"
     },
     "ui_group": {
      "name": "ui_group",
@@ -783,7 +783,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_group.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_group.js"
     },
     "ui_spacer": {
      "name": "ui_spacer",
@@ -793,7 +793,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-dashboard",
-     "file": "/data/node_modules/node-red-dashboard/nodes/ui_spacer.js"
+     "file": "/data/node_modules/@types/node-red-dashboard/nodes/ui_spacer.js"
     }
    }
   },
@@ -810,7 +810,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-ui-media",
-     "file": "/data/node_modules/node-red-contrib-ui-media/ui_media.js"
+     "file": "/data/node_modules/@types/node-red-contrib-ui-media/ui_media.js"
     }
    }
   },
@@ -827,7 +827,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-image-tools",
-     "file": "/data/node_modules/node-red-contrib-image-tools/jimp.js"
+     "file": "/data/node_modules/@types/node-red-contrib-image-tools/jimp.js"
     },
     "xzing2dDecode": {
      "name": "xzing2dDecode",
@@ -837,7 +837,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-image-tools",
-     "file": "/data/node_modules/node-red-contrib-image-tools/xzing2dDecode.js"
+     "file": "/data/node_modules/@types/node-red-contrib-image-tools/xzing2dDecode.js"
     },
     "imageViewer": {
      "name": "imageViewer",
@@ -847,7 +847,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-image-tools",
-     "file": "/data/node_modules/node-red-contrib-image-tools/imageViewer.js"
+     "file": "/data/node_modules/@types/node-red-contrib-image-tools/imageViewer.js"
     }
    }
   },
@@ -864,7 +864,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-send-multipart-formdata",
-     "file": "/data/node_modules/node-red-contrib-send-multipart-formdata/http-send-multipart-formdata.js"
+     "file": "/data/node_modules/@types/node-red-contrib-send-multipart-formdata/http-send-multipart-formdata.js"
     }
    }
   },
@@ -948,7 +948,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-cloud-firestore",
-     "file": "/data/node_modules/node-red-contrib-cloud-firestore/src/admin/firebaseAdmin.js"
+     "file": "/data/node_modules/@types/node-red-contrib-cloud-firestore/src/admin/firebaseAdmin.js"
     },
     "firestoreIn": {
      "name": "firestoreIn",
@@ -958,7 +958,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-cloud-firestore",
-     "file": "/data/node_modules/node-red-contrib-cloud-firestore/src/Read/Read.js"
+     "file": "/data/node_modules/@types/node-red-contrib-cloud-firestore/src/Read/Read.js"
     },
     "firestoreOut": {
      "name": "firestoreOut",
@@ -968,7 +968,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-cloud-firestore",
-     "file": "/data/node_modules/node-red-contrib-cloud-firestore/src/Write/Write.js"
+     "file": "/data/node_modules/@types/node-red-contrib-cloud-firestore/src/Write/Write.js"
     }
    }
   },
@@ -985,7 +985,7 @@
      "enabled": true,
      "local": true,
      "module": "node-red-contrib-http-request",
-     "file": "/data/node_modules/node-red-contrib-http-request/www-request.js"
+     "file": "/data/node_modules/@types/node-red-contrib-http-request/www-request.js"
     }
    }
   },
