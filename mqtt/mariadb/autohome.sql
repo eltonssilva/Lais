@@ -181,7 +181,8 @@ INSERT INTO `dispositivo_type` (`id`, `Descricao`, `codigo`, `src_imagem`, `type
 (22, 'Tomada Inteligente', '22', '/png/64/socket_f.png', 'Outlet', 'OnOff', 1, 1),
 (23, 'Cena', '23', '/png/64/cena.png', 'Scene', 'OnOff', 1, 1),
 (24, 'Lampada dimerizavel', '24', '/png/64/bulb.png', 'Light', 'OnOff-Brightness', 1, 1),
-(25, 'Controle Som', '25', '/png/64/som.png', '', '', 1, 1);
+(25, 'Controle Som', '25', '/png/64/som.png', '', '', 1, 1),
+(26, 'Smart Lock', '26', '/png/64/lock_close.png', '', '', 1, 1);
 
 -- --------------------------------------------------------
 

@@ -1662,6 +1662,53 @@ elseif ($valor == "Off")
 <?php } ?>
 
 
+<?php
+
+ if($rec['tipo_geral']=='26')  // Chave liga desliga Switch
+{ 
+if($valor == "On")
+	{
+			$checked = 'checked';
+			$bulb = '/png/64/lock_close.png';
+	}
+elseif ($valor == "Off")
+	{
+			$checked = '';
+			$bulb = '/png/64/lock_close.png'; 
+	}
+?>
+<tr id="row<?php echo $rec['ordem']; ?>">
+<th><img src="/png/64/lock_close.png" alt="Smiley face" height="64" width="64"></th> 
+<th><?php echo $rec['Descricao']; ?></th>
+<th><?php echo "SN: " . $rec['username_iphone'] ; ?> <a href="javascript: void(0);" onclick="window.open('homekit.php?pin=<?php echo $rec['pin_iphone'] ; ?>', 'Adcionar Dispositivo', 'STATUS=NO, TOOLBAR=NO, TITLEBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO ,STATUS=NO, MENUBAR=NO, TOP=10, LEFT=10, WIDTH=500, HEIGHT=300');"><img src="/png/32/homekitlogo.png"></a></th>
+<th>   <a href="javascript: void(0);" onclick="window.open('sincNora.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/googlehome.png"></a></th>
+<th><?php echo $desc_ambiente; ?></th>
+ <th> 
+  
+  <div class="onoffswitch">
+ <input type="checkbox" onclick="return pubmqtt('myonoffswitch<?php echo $rec['id']; ?>', '<?php echo $rec['setPubTopic0']; ?>', '1')" name="onoffswitch<?php echo $rec['id']; ?>"  class="onoffswitch-checkbox <?php echo $rec['id']; ?>" id="myonoffswitch<?php echo $rec['id']; ?>" value="on" <?php  echo $checked ?> >
+<label class="onoffswitch-label" for="myonoffswitch<?php echo $rec['id']; ?>">
+<span class="onoffswitch-inner"></span>
+<span class="onoffswitch-switch"></span>
+</label>
+  </div>
+   
+
+
+</th>
+<!--
+<td align="center">   <a href="javascript: void(0);" onclick="window.open('editdispositivo.php?id=<?php echo $rec['id']; ?>', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=NO, TOP=10, LEFT=10, WIDTH=600, HEIGHT=300');"><img src="/png/32/edit.png"></a></td>
+-->
+<th> <a onClick="return confirm('Tem Certeza que deseja deletar!')" href="deletedispositivo.php?id=<?php echo $rec['id']; ?>"><img src="/png/32/delete.png"></a> </th>
+<th>
+<a href="#" id="row3Up" class="rowUp">Up</a>
+<a href="#" id="row3Down" class="rowDown">Down</a>
+
+</th>
+</tr>
+<?php } ?>
+
+
 
 
 
