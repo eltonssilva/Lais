@@ -644,7 +644,7 @@ if(isset($_POST['btnSalvar']))
 
 	}
 
-	if($id_ == '26') // Para Controle de TV e midia
+	if($id_ == '26') // Para de Fechadura
 	{		
 	$tipo = '1';       //(Android) Ler Valor=0, Chave=1, Botão=2, Led=3, Slider=4, Cabeçalho=5, Medir=6, Grafico=7, Buttons set=8, Combo box=9 
 	$tipo_geral = '26'; //Geral(não Mostrar no site)=0 Chave Lampada=1, Sensor de Humidade=2, Sensor de Temperatura=3; Nivel de Luz=4, RGB Lampada=5, Pressão=7, Altitude=8  , Persiana=9, , Ar condicionado=10
@@ -669,8 +669,55 @@ if(isset($_POST['btnSalvar']))
 
 	}
 	
+	if($id_ == '27') // Para de Fechadura
+	{		
+	$tipo = '1';       //(Android) Ler Valor=0, Chave=1, Botão=2, Led=3, Slider=4, Cabeçalho=5, Medir=6, Grafico=7, Buttons set=8, Combo box=9 
+	$tipo_geral = '27'; //Geral(não Mostrar no site)=0 Chave Lampada=1, Sensor de Humidade=2, Sensor de Temperatura=3; Nivel de Luz=4, RGB Lampada=5, Pressão=7, Altitude=8  , Persiana=9, , Ar condicionado=10
+	$dispositivo_fisico = '1'; //é dispositivo fisico? Sim=1, Não=0
+	$proprietario = '1'; // Dispositivo é Propriedade da Autohome? Sim=1, Não=0
+	$setname0 = $descricao; //setname0 é o nome que aparece no celular 
+	$setSubTopic0= '/house/confirma/' . $username_topico;  //Topico para Subscrever
+	$setPubTopic0= '/house/garagedoor/' . $username_topico;  //Topico para Publicar
+	$publishValue='1'; // Comando Ligar
+	$publishValue2='0'; // Comando Desligar
+	$additionalValue='0';  // Não Util no caso de Arcondicionado
+	$additionalValue2='100'; // Não Util no caso de Arcondicionado
+	$setPrimaryColor0='0'; // Nada no cado de chave
+	$retained='1'; // Reter=1 pareter valor e retained='0' para não reter
+	$mode='2'; //Em caso de medir temos: (Simples mode=0, valor=1, percentagem=2)
+	$habilitado='1'; //1 para dispositivo habilitado 0 para desabilitado
+	$convidado='0';  //0 para usuario principal 1 para convidadeo
 	
+	//	$url = 'http://localhost/write_sensortemperatura_js.php';
+//	 $data = array('username_iphone' => $username_iphone, 'pin_iphone' => $pin_iphone, 'setSubTopic0_confirma' => $setSubTopic0, 
+	//        'setSubTopic0' => $setSubTopic0, 'Descricao' => $descricao, 'publishValue' => $publishValue, 'publishValue2' => $publishValue2);
+
+	}
 	
+	if($id_ == '28') // Para Controle de Irrigação
+	{		
+	$tipo = '1';       //(Android) Ler Valor=0, Chave=1, Botão=2, Led=3, Slider=4, Cabeçalho=5, Medir=6, Grafico=7, Buttons set=8, Combo box=9 
+	$tipo_geral = '28'; //Geral(não Mostrar no site)=0 Chave Lampada=1, Sensor de Humidade=2, Sensor de Temperatura=3; Nivel de Luz=4, RGB Lampada=5, Pressão=7, Altitude=8  , Persiana=9, , Ar condicionado=10
+	$dispositivo_fisico = '1'; //é dispositivo fisico? Sim=1, Não=0
+	$proprietario = '1'; // Dispositivo é Propriedade da Autohome? Sim=1, Não=0
+	$setname0 = $descricao; //setname0 é o nome que aparece no celular 
+	$setSubTopic0= '/house/confirma/' . $username_topico;  //Topico para Subscrever
+	$setPubTopic0= '/house/irrigation/' . $username_topico;  //Topico para Publicar
+	$publishValue='1'; // Comando Ligar
+	$publishValue2='0'; // Comando Desligar
+	$additionalValue='0';  // Não Util no caso de Arcondicionado
+	$additionalValue2='100'; // Não Util no caso de Arcondicionado
+	$setPrimaryColor0='0'; // Nada no cado de chave
+	$retained='1'; // Reter=1 pareter valor e retained='0' para não reter
+	$mode='2'; //Em caso de medir temos: (Simples mode=0, valor=1, percentagem=2)
+	$habilitado='1'; //1 para dispositivo habilitado 0 para desabilitado
+	$convidado='0';  //0 para usuario principal 1 para convidadeo
+	
+	//	$url = 'http://localhost/write_sensortemperatura_js.php';
+//	 $data = array('username_iphone' => $username_iphone, 'pin_iphone' => $pin_iphone, 'setSubTopic0_confirma' => $setSubTopic0, 
+	//        'setSubTopic0' => $setSubTopic0, 'Descricao' => $descricao, 'publishValue' => $publishValue, 'publishValue2' => $publishValue2);
+
+	}
 	
 	
 // use key 'http' even if you send the request to https://...
@@ -683,7 +730,7 @@ if(isset($_POST['btnSalvar']))
 	);
 	$context  = stream_context_create($options);
 	$result = file_get_contents($url, false, $context);
-	if ($result === FALSE) { echo "Erro"; }
+	if ($result === FALSE) { echo "_Erro_"; }
 
 
 	
