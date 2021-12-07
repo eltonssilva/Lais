@@ -719,6 +719,30 @@ if(isset($_POST['btnSalvar']))
 
 	}
 	
+	if($id_ == '29') // Para Sensor de temperatura
+	{		
+	$tipo = '6';       //(Android) Ler Valor=0, Chave=1, Botão=2, Led=3, Slider=4, Cabeçalho=5, Medir=6, Grafico=7, Buttons set=8, Combo box=9 
+	$tipo_geral = '29'; //Geral(não Mostrar no site)=0 Chave Lampada=1, Sensor de Humidade=2, Sensor de Temperatura=3; Nivel de Luz=4, RGB Lampada=5
+	$dispositivo_fisico = '1'; //é dispositivo fisico? Sim=1, Não=0
+	$proprietario = '1'; // Dispositivo é Propriedade da Autohome? Sim=1, Não=0
+	$setname0 = $descricao . "(°C)"; //setname0 é o nome que aparece no celular 
+	$setSubTopic0= '/house/rain/' . $username_topico;  //Topico para Subscrever
+	$setPubTopic0= '/house/rain/' . $username_topico;  //Topico para Publicar
+	$publishValue='0'; // Ligado no caso de Chave
+	$publishValue2='1'; // Desligado no caso de Chave
+	$additionalValue='0';  // Nada no Caso de Chave
+	$additionalValue2='90'; // Nada no caso de chave
+	$setPrimaryColor0='0'; // Nada no cado de chave
+	$retained='0'; // Reter=1 pareter valor e retained='0' para não reter
+	$mode='1'; //Em caso de medir temos: (Simples mode=0, valor=1, percentagem=2)
+	$habilitado='1'; //1 para dispositivo habilitado 0 para desabilitado
+	$convidado='0';  //0 para usuario principal 1 para convidadeo
+	
+	// 	$url = 'http://localhost/write_sensorrain_js.php';
+	//  $data = array('username_iphone' => $username_iphone, 'pin_iphone' => $pin_iphone, 'setSubTopic0_confirma' => $setSubTopic0, 
+	//         'setSubTopic0' => $setSubTopic0, 'Descricao' => $descricao, 'publishValue' => $publishValue, 'publishValue2' => $publishValue2);
+
+	}
 	
 // use key 'http' even if you send the request to https://...
 	$options = array(

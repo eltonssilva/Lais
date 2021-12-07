@@ -184,7 +184,8 @@ INSERT INTO `dispositivo_type` (`id`, `Descricao`, `codigo`, `src_imagem`, `type
 (25, 'Controle Som', '25', '/png/64/som.png', '', '', 1, 1),
 (26, 'Smart Lock', '26', '/png/64/lock_close.png', '', '', 1, 1),
 (27, 'Porta Garagem', '27', '/png/64/garage.png', '', '', 1, 1),
-(28, 'Irrigação', '28', '/png/64/sprinkler_off.png', '', '', 1, 1);
+(28, 'Irrigação', '28', '/png/64/sprinkler_off.png', '', '', 1, 1),
+(29, 'Sensor de Chuva', '29', '/png/64/rainsensor_off.png', '', '', 1, 1);
 
 -- --------------------------------------------------------
 
